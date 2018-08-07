@@ -1,0 +1,110 @@
+/* pages/drawcash.wxss */
+.drawCash_box {
+  background-color: #fff;
+  height: 200rpx;
+  padding: 30rpx;
+
+}
+.drawCash_titile_box {
+  height: 30%;
+  width: 100%;
+}
+
+.drawCash_titile{
+  padding:10rpx 0;
+  color: #9A9A9A;
+  font-size: 34rpx;
+}
+.drawCash_titile_limit {
+  color: #9A9A9A;
+  font-size: 30rpx;
+  padding:10rpx 0;
+}
+.moneyInput_box {
+  height: 70%;
+  width: 100%;
+}
+.moneyLabel {
+  height: 60%;
+  color: #FC7946;
+  padding-top:12%; 
+  width: 8%;
+}
+.moneyInput {
+  height: 100%;
+  width: 80%;
+}
+.damondNum_box,.tips_box {
+  padding: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.damondNum,.tips {
+  padding: 20 0rpx;
+  font-size: 30rpx;
+  color: #A8A8A9;
+}
+.cashWay_box {
+  padding: 30rpx;
+  height:101rpx;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.cashWay {
+  width: 69%;
+  font-size: 34rpx;
+}
+.cashWay_icon {
+  width: 19%;
+  font-size: 31rpx;
+  color: #A8A8A9;
+  padding-top: 8rpx;
+  padding-left: 20rpx;
+}
+.inputBox {
+  padding-top: 40rpx;
+  padding-left: 20rpx; 
+  float: left;
+  height: 80%;
+  width: 80%;
+  font-size: 58rpx;
+}
+.commitBtn_box {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 50rpx 0;
+  padding: 30rpx;
+}
+.commitBtn {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 20rpx 0 ;
+  background: #2772FF;
+  border-radius: 10rpx;
+}
+input,
+textarea {
+    color: #FC7946;
+    text-shadow: 0px 0px 0px #000;
+    -webkit-text-fill-color: #FC7946;
+}
+image {
+  width:60rpx;
+  height:53rpx;
+}
+.drawCashBox {
+  padding: 0 27%;
+  width: 100%;
+  color: #B9B9B9;
+  font-size: 26rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.drawCashRules,.drawCashRecord {
+  height: 100%;
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+}

@@ -1,0 +1,140 @@
+<!-- 文章 -->
+<view class='article'>
+  <view>{{viewArray.title}}</view>
+  <view class='clearfix'>
+    <image class='fl' src='{{viewArray.avatar}}' id='{{viewArray.user_id}}' catchtap='linkUserFun'></image>
+    <view class='fl'>
+      <view class='clearfix'>
+        <view class='fl'>{{viewArray.nickname}}</view>
+        <image class='fl' src='../images/icon_master.png'></image>
+      </view>
+      <view>{{viewArray.created_at}}</view>
+    </view>
+    <view class='fr' wx:if="{{viewArray.is_concern==-1?false:true}}" id="{{viewArray.user_id}}" catchtap="{{followState?'':'followFun'}}">{{followState?'已关注':'关注'}}</view>
+  </view>
+  <!-- <view>{{viewArray.intro}}</view> -->
+  <view wx:if="{{buyState}}">{{viewArray.content}}</view>
+  <view class='relatedLabel' wx:if = '{{isRelated}}' data-uid='{{user_id}}' id = '{{relatedShareId}}' catchtap='toRelatedNote' style='font-size:28rpx'>关联笔记： #{{relatedShareName}}</view>
+  <view wx:if="{{buyState}}">(帖子内容仅代表个人观点，不构成投资建议)</view>
+</view>
+<!-- 已购买 -->
+<view wx:if="{{buyState}}">
+  <!-- 功能 -->
+  <view class='clearfix fun'>
+    <view catchtap="{{viewArray.is_praise!=1?'setLaudFun':''}}" class="fl {{viewArray.is_praise!=1? 'bgWhite' :'bgBlue'}}">
+      <image wx:if="{{viewArray.is_praise!=1}}" src='../images/icon_laud3.png'></image>
+      <image wx:if="{{viewArray.is_praise==1}}" src='../images/icon_laudWhite4.png'></image>
+      <text  class="{{viewArray.is_praise!=1? '' :'thumed'}}">{{viewArray.praise}}</text>
+    </view>
+    <view class='fl' catchtap="{{viewArray.is_concern!=-1?'openRewardMaskFun':''}}">
+      <image src='../images/icon_reward.png'></image>
+      <text>赏</text>
+    </view>
+  </view>
+
+
+  <!-- 打赏 -->
+  <view class='read' style='margin-top:20rpx;' wx:if="{{profitNum == 0 ? false : true}}">
+    <view>打赏
+      <text>（{{profitNum}}）</text>
+      <text class='allData fr clearfix' catchtap='linkRewardUserPage'>详情></text>
+    </view>
+    <view class='clearfix'>
+      <image class='fl' id='{{item.user_id}}' src='{{item.avatar}}' wx:for="{{profitInfo}}" catchtap='linkUserFun'></image>
+      <!-- <view class='fl' wx:if="{{!moreProfitInfo && profitNum!=0}}" catchtap='linkRewardUserPage'>
+        <text></text>
+        <text></text>
+        <text></text>
+        <text></text>
+      </view> -->
+    </view>
+  </view>
+
+  <!-- 评论 -->
+  <view class="comment {{commentNull == true ? '': 'marginBottom20'}}">
+    <view>全部评论（{{viewArray.comment}}）</view>
+    <view wx:if="{{commentArray!=''?true:false}}">
+      <view class='list' wx:for="{{commentArray}}" wx:key = "{{item.id}}">
+        <view class='clearfix'>
+          <image class='fl' src='{{item.avatar}}' id='{{item.user_id}}' catchtap='linkUserFun'></image>
+          <text class='fl'>{{item.name}}</text>
+          <!-- <view class='fr'>
+            <image src='../images/icon_view2.png'></image>
+            <text>2</text>
+          </view> -->
+          <view class='fr' data-index="{{index}}" id='{{item.id}}' catchtap="commentLaudFun">
+            <image wx:if="{{item.is_praise == 0}}" src='../images/icon_laud4.png'></image>
+            <image wx:if="{{item.is_praise == 1}}" src='../images/icon_laudRed4.png'></image>
+            <text>{{item.praise}}</text>
+          </view>
+        </view>
+        <view>{{item.content}}</view>
+        <view>{{item.created_at}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 暂无提示 -->
+  <view wx:if="{{commentNull}}" class='drop'>暂无更多评论</view>
+  <!-- 底部 -->
+  <view class='footer_indie'>
+    <view class='empty' wx:if="{{viewArray.comment==0?true:false}}">
+      <image src='../images/icon_empty.png'></image>
+    </view>
+  </view>
+  <!-- 输入框 -->
+  <view class='pf input clearfix'>
+    <!-- <view class='fl' catchtap='setMaskTrueFun'>发表评论...</view> -->
+    <input class='fl' placeholder='发表评论...' maxlength='300' bindinput="bindCommentInput" value='{{commentValue}}'></input>
+    <view class='fl' catchtap='getCommentFun'>发表</view>
+    
+  </view>
+</view>
+<!-- 未购买 -->
+<view class='not' wx:if="{{!buyState}}">
+  <view>剩下50%精彩内容，付费即可阅读</view>
+   <view id='{{viewArray.id}}' catchtap='openCueMaskFun'>支付{{viewArray.price}}{{viewArray.type==1?'积分':'元'}}</view> 
+   <!-- <view id='{{viewArray.id}}' catchtap='openCueMaskFun'>支付{{maskRewardArray.price}}</view>  -->
+</view>
+
+<!-- 评论遮罩 -->
+<!-- <view class='mask' wx:if="{{maskState}}">
+  <view class='commentMask'>
+    <input placeholder='请输入不少于20字的评论内容...' maxlength='300' bindinput="bindCommentInput" value='{{commentValue}}'></input>
+    <view class='clearfix'>
+      <view class='fl' catchtap='setMaskFalseFun'>取消</view>
+      <view class='fr' catchtap='getCommentFun'>发送</view>
+    </view>
+  </view>
+</view> -->
+
+<!-- 打赏遮罩 -->
+<view class='mask' wx:if="{{maskRewardState}}">
+  <view class='reward'>
+    <image src='../images/icon_reward_mask.png'></image>
+    <view class='clearfix'>
+      <view data-index="{{index}}" class="fl {{item.state?'cof4ebd4':''}}" wx:for="{{maskRewardArray}}" catchtap='choiceRawardSumFun'>{{item.price}}积分</view>
+    </view>
+    <view>
+      优先使用余额支付
+      <!-- <text class='co2772ff'>更换</text> -->
+    </view>
+    <view catchtap='sendRawardSumFun'>打赏</view>
+    <image src='../images/icon_close.png' catchtap='closeRewardMaskFun'></image>
+  </view>
+</view>
+
+<!-- 支付遮罩 -->
+<view class='mask paymask' wx:if="{{maskCueState}}">
+  <view>
+    <image src='../images/price_bk.png'></image>
+    <view class='clearfix'>
+      <image src='../images/price_left.png'></image>
+      <image class="{{item==1?'one':''}}" src='../images/price_{{item}}.png' wx:for="{{priceArray}}"></image>
+      <image src="../images/price_right{{viewArray.type==1?'2':'1'}}.png"></image>
+    </view>
+    <view class='clearfix'>
+      <view class='fl' catchtap='closeCueMaskFun'>取消</view>
+      <view class='fl' id="{{noteInfo.id}}" catchtap='buyFun'>确定</view>
+    </view>
+  </view>
+</view>

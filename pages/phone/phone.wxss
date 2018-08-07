@@ -1,0 +1,67 @@
+.phone{padding: 0 30rpx;height: 280rpx;text-align: center;font-size: 36rpx;color: #333333}
+.code{padding: 0 150rpx}
+.code input{padding: 0 30rpx;width: 140rpx;height: 80rpx;border:1px solid #aaa;font-size: 30rpx;color: #333333}
+.code view{width: 200rpx;line-height: 84rpx;font-size: 30rpx;background-color: #2772ff;color: #fff;text-align: center}
+.btn{margin-top: 100rpx;height: 100rpx;line-height: 100rpx;color: #fff;font-size: 34rpx;text-align: center}
+.bk2772ff{background-color: #2772ff}
+.bkddd{background-color: #ddd}
+
+.box {
+  padding: 0 30rpx;
+  height: 110rpx;
+  background: #fff;
+}
+
+.boxSlice {
+  border-top: 1rpx solid #eee;
+  height: 100%;
+  width: 100%;
+}
+
+.box_title {
+  margin-right: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 110rpx;
+  width: 21rpx;
+}
+.box_title_img {
+  width: 21rpx;
+  height: 31rpx;
+}
+
+.box_value {
+  width: 60%;
+  height: 100%;
+}
+
+.box_input {
+  height: 100%;
+  font-size: 30rpx;
+  color: #2e2e2e;
+}
+
+.box_input_placeholder {
+  color: #999;
+}
+.getValidateCode {
+  font-size: 30rpx;
+  color: #2772ff;
+  line-height: 110rpx;
+}
+.btnBox {
+  margin:100rpx 30rpx;
+}
+.phoneCommitBtn {
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+}
+.commitNarmol {
+  background: #9fc2ff;
+}
+.commitSuccess {
+  background: #2772ff;
+}

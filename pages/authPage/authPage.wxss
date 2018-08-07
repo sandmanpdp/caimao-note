@@ -1,0 +1,53 @@
+/* pages/authPage/authPage.wxss */
+page {
+  position: relative;
+  height: 100%;
+  background: url('https://zhitouapi.romawaysz.com/static/images/loginPage.jpg') no-repeat; 
+  background-size: 100% 100%; 
+}
+.btnBox {
+  width: 550rpx;
+  height: 90rpx;
+  font-size: 34rpx;
+  position: absolute;
+  bottom: 180rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1rpx solid #fff;
+  background: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #2772FF;
+  box-shadow: 5rpx 5rpx 5rpx rgba(0, 0, 0, .2)
+}
+.authBtn {
+  background: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+  padding: 0 0;
+  margin: 0 0;
+  height: 100%;
+  opacity:0;
+  position: absolute;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  top: 0;
+}
+.textBox {
+  position: absolute;
+  bottom: 120rpx;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  width: 100%;
+}
+.textBlack {
+  color: #000;
+  display: inline-block;
+}
+.textWhite {
+  color: #2772FF;
+  display: inline-block;
+  padding-left: 10rpx;
+}

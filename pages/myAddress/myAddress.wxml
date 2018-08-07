@@ -1,0 +1,61 @@
+<!--pages/myAddress/myAddress.wxml-->
+<!-- 收货人 -->
+<view class='userName_box'>
+  <view class='userName_content'>
+    <view class='userName_title fl'>
+    收货人
+  </view>
+  <view class='userName_input fl'>
+    <input class='Addressinput' placeholder='请输入收货人' value='{{name}}' bindinput='userNameInput'>
+    </input>
+  </view>
+  </view>
+</view>
+<!-- 手机号码 -->
+<view class='tele_box'>
+  <view class='tele_content'>
+    <view class='tele_title fl'>
+    手机号码
+  </view>
+  <view class='tele_input fl'>
+    <input class='Addressinput' placeholder='请输入手机号码' type='number' value='{{phone}}' bindinput='teleInput'></input>
+  </view>
+  </view>
+</view>
+<!-- 选择省份 -->
+<view class='province_box'>
+  <picker mode='region' bindchange='bindRegionChange' value='{{region}}'>
+    <view class='fl province'>{{region[0]}}</view>
+    <view class='fl city'>{{region[1]}}</view>
+    <view class='fl district'>{{region[2]}}</view>
+  </picker>
+</view>
+<!-- 详细地址 -->
+<view class='addressDetails_box'>
+  <view class='addressDetails_content'>
+    <view class='addressDetails_title fl'>
+    详细地址
+  </view>
+  <view class='addressDetailse_input fl'>
+    <input class='Addressinput' placeholder='请输入详细地址' value='{{userAddress}}' bindinput='addressDetailInput'></input>
+  </view>
+  </view>
+</view>
+<!-- 邮政编码 -->
+<view class='code_box'>
+  <view class='code_content'>
+    <view class='code_title fl'>
+      邮政编码
+    </view>
+    <view class='code_input fl'>
+      <input class='Addressinput' placeholder='请输入邮政编码' type='number' value='{{zip_code}}' bindinput='codeInput'></input>
+    </view>
+  </view>
+</view>
+
+<!-- 确定按钮 -->
+<view class='commitBtn_box fl'>
+  <view class='commitBtn' catchtap='commitBtn'>
+    确定
+  </view>
+</view>

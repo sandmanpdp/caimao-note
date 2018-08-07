@@ -1,0 +1,22 @@
+<view class='head'>
+    <image src='../images/logo.png'></image>
+    <view>黑石智投  V1.0.1</view>
+</view>
+<view class='box' catchtap='oneFun'>
+  <view class='clearfix bb'>
+    <view class='fl'>关于我们</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<view class='box' catchtap='twoFun'>
+  <view class='clearfix bb'>
+    <view class='fl'>免责声明</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<view class='box' catchtap='threeFun'>
+  <view class='clearfix'>
+    <view class='fl'>加入用户体验计划</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>

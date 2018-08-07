@@ -1,0 +1,54 @@
+/* pages/profitPage/profitPage.wxss */
+page {
+  line-height: 0;
+}
+view {
+  box-sizing: border-box;
+}
+.userBox {
+  background: #fff;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #F9F9F9;
+}
+.userNo {
+  margin-right: 30rpx;
+  height: 100%;
+  line-height: 82rpx !important;
+}
+.userPortrait {
+  width: 82rpx;
+  height: 82rpx;
+  margin-right: 30rpx;
+  border-radius: 50%;
+}
+.userNo,.userPortrait,.userNameBox,.money{
+  height: 82rpx;
+}
+.userNo ,.userName {
+  font-size: 34rpx;
+  line-height: 34rpx;
+  color: #333;
+}
+.time {
+  line-height: 26rpx;
+  font-size: 26rpx;
+  color: #B6B6B6;
+  margin-top: 20rpx;
+}
+.money {
+  line-height: 82rpx;
+  color: #FC7E4D;
+  font-size: 40rpx;
+  position: relative;
+}
+.yuanbao {
+  width: 45rpx;
+  height: 35rpx;
+  position: absolute;
+  top: 47%;
+  transform: translateY(-50%)
+}
+.moneyBox{
+  display: inline-block;
+  padding-left:60rpx;
+}

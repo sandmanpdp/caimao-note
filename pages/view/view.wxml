@@ -1,0 +1,30 @@
+<view class='selecteBox'>
+    <picker bindchange='sortFun' value='{{index}}' range='{{sortArray}}' class='sortPicker'>
+      <view>
+        {{sortArray[sortBy]}}
+        <image src='../images/icon_bottom_arrow_gray.png' class='icon_bottom_arrow'></image>
+      </view>
+    </picker> 
+  </view>
+<view class='section'>
+  <view class='box' wx:for="{{viewArray}}" id='{{item.id}}' catchtap='viewReadFun'>
+    <view class='title'>{{item.title}}</view>
+    <view class='text tw3'>{{item.intro}}</view>
+    <view class='info clearfix'>
+      <view class='author fl'>
+        <image class='headimg' src='{{item.avatar}}'></image>
+        <view class='name'>{{item.nickname}}</view>
+      </view>
+      <view class='data fr'>
+          <image src='../images/icon_look.png' class='icon'></image>
+          <text class='number'>{{item.look}}</text>
+          <image src='../images/icon_view.png' class='icon'></image>
+          <text class='number'>{{item.comment}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 暂无提示 -->
+<view wx:if="{{notesNull}}" class='drop'>暂无更多观点数据</view>
+<!-- 下拉提示 -->
+<view class='drop' wx:if="{{bottomState}}">下拉刷新   加载更多内容</view>

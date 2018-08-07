@@ -1,0 +1,89 @@
+
+<!-- 导航 -->
+<view class='nav clearfix'>
+  <view id='0' class="fl blue pstRel {{navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>
+  我的阅读
+  <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
+  </view>
+  <view id='1' class="fr pstRel {{!navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>我的笔记
+    <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
+  </view>
+
+</view>
+<!-- 列表 -->
+<!-- 我的阅读 -->
+<view class='list read' wx:if="{{navIndex}}">
+  <view wx:for="{{readArray}}" class='box' id='{{item.note_id}}' wx:key="{{item.note_id}}" data-uid='{{item.user_id}}' catchtap='readLinkFun'>
+    <view class='clearfix one oneTitle' style='position:relative'>
+      <view class='fl left'>
+        <text>{{item.share}}</text>
+        <text class='oneCode'> {{item.code}}</text>
+        <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if='{{item.need_price!=0}}'></image> 
+        <text class="{{item.need_price==0?'freePriceText':'needPriceText'}}">{{item.need_price==0?'免费':item.need_price}}</text>
+      </view>
+      <view class='fr right' wx:if="{{item.is_reach==0}}">未达标</view>
+      <view class='fr right co93b8ff' wx:if="{{item.is_reach==1}}">达标</view>
+      <view class='fr right co93b8ff' wx:if="{{item.is_reach==-1}}">进行中</view>
+    </view>
+    <view class='clearfix two '>
+      <view class='fl'>
+        <view>{{item.rise}}%</view>
+        <view>目标涨幅({{item.day}}日)</view>
+      </view>
+      <view class='fr pstRel'>
+        <view class="{{ item.actualTop < 0 ? 'rateIsMinus' : 'rateIsPositive' }}">{{item.actualTop}}%</view>
+        <view>实际涨幅</view>
+        <image wx:if="{{item.is_reach == '1'}}" class='seal' src='../images/sealReach.png'></image>
+        <image wx:if="{{item.is_reach == '0'}}" class='seal' src='../images/sealUnreach.png'></image>
+      </view>
+    </view>
+    <view class='clearfix three'>
+      <view class='fl'>来自：{{item.nickname}}</view>
+      <view class='fr'>
+        <image src='../images/icon_read.png' class='icon'></image> 
+        <text>{{item.look}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 我的笔记 -->
+<view class='list note' wx:if="{{!navIndex}}">
+  <view class='box' wx:for="{{noteArray}}" id='{{item.id}}' data-uid='{{item.user_id}}' catchtap='readLinkFun'>
+    <view class='clearfix one oneTitle'>
+      <view class='fl left' style='position:relative'>
+        <text>{{item.share}}</text>
+        <text class='oneCode'> {{item.code}}</text>
+        <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if='{{item.price!=0}}'></image> 
+        <text class="{{item.price==0?'freePriceText':'needPriceText'}}">{{item.price==0?'免费':item.price}}</text>
+      </view>
+      <view class='fr right' wx:if="{{item.is_reach==0}}">未达标</view>
+      <view class='fr right co93b8ff' wx:if="{{item.is_reach==1}}">达标</view>
+      <view class='fr right co93b8ff' wx:if="{{item.is_reach==-1}}">进行中</view>
+    </view>
+    <view class='clearfix two'>
+      <view class='fl'>
+        <view>{{item.rise}}%</view>
+        <view>目标涨幅({{item.day}}日)</view>
+      </view>
+      <view class='fr pstRel'>
+        <view wx:if="{{item.actualTop!=0}}" class="{{ item.actualTop < 0 ? 'rateIsMinus' : 'rateIsPositive' }}">{{item.actualTop}}%</view>
+        <view wx:if="{{item.actualTop==0}}">--</view>
+        <view>实际涨幅</view>
+        <image wx:if="{{item.is_reach == '1'}}" class='seal' src='../images/sealReach.png'></image>
+        <image wx:if="{{item.is_reach == '0'}}" class='seal' src='../images/sealUnreach.png'></image>
+      </view>
+    </view>
+    <view class='clearfix three'>
+      <view class='fl' wx:if="{{item.is_reach==-1}}">还剩{{item.endTime}}天结束</view>
+      <view class='fl' wx:if="{{item.is_reach!=-1}}">已结束</view>
+      <view class='fr'>
+        <image src='../images/icon_read.png' class='icon'></image> 
+        <text>{{item.look}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 暂无提示 -->
+<view wx:if="{{notesNull}}" class='drop'>暂无笔记数据</view>
+<!-- 下拉提示 -->
+<view class='drop' wx:if="{{bottomState}}">下拉刷新   加载更多内容</view>

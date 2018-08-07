@@ -1,0 +1,7 @@
+<view class='box' catchtap='oneFun'>
+  <view class='clearfix bb'>
+    <view class='fl'>客服热线</view>
+    <view class='fl'>(工作日 09:00-18:00)</view>
+    <view class='fr' catchtap='callFun'>0755-86703175</view>
+  </view>
+</view>

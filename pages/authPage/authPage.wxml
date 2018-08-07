@@ -1,0 +1,9 @@
+<!--pages/authPage/authPage.wxml-->
+
+<view class='btnBox'>
+  登 陆
+  <button class='authBtn' open-type='getUserInfo' bindgetuserinfo='onGotUserInfo'></button>
+</view>
+<!-- <view class='textBox'>
+  <text class='textBlack'>已阅读和同意</text><text class='textWhite'>黑石笔记服务协议</text>
+</view> -->

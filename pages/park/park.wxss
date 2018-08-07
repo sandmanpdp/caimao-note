@@ -1,0 +1,9 @@
+.banner{display: block;width: 100%}
+.list{padding: 50rpx 30rpx;background-color: #2e2e2e}
+.box{position: relative;box-sizing: border-box;margin-top: 50rpx;padding: 46rpx 40rpx 56rpx;height: 300rpx;background-color: #ffca62;border-radius: 20rpx;color: #ffffff}
+.box:first-child{margin: 0}
+.box>view:nth-child(1) text:nth-child(1){font-size: 44rpx;line-height: 44rpx}
+.box>view:nth-child(1) text:nth-child(2){margin-left: 20rpx;font-size: 30rpx;line-height: 30rpx}
+.box>view:nth-child(2),.box>view:nth-child(3){font-size: 30rpx;line-height: 30rpx}
+.box>view:nth-child(2){margin: 26rpx 0 70rpx}
+.box>view:nth-child(4){position: absolute;bottom: 32rpx;right: 40rpx;width: 184rpx;height: 64rpx;background-color: #fff;color: #fc7946;font-size: 30rpx;border-radius: 32rpx;text-align: center;line-height: 64rpx;box-shadow: 0 0 20rpx 2rpx #eee}

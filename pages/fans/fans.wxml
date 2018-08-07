@@ -1,0 +1,42 @@
+
+<!-- 关注列表 -->
+<view>  
+  <view wx:for="{{fansArray}}" class='list_box' id='{{item.id}}' catchtap='recommendJumpFun'>
+    <!-- 上半部分 -->
+    <view class='list_box_top clearfix'>
+      <!-- 作者头像 -->
+      <view class='fl list_box_top_authorHead'>
+        <image class='list_box_top_authorHead_img' src='{{item.avatar}}'></image>
+        <image hidden="{{item.vip ? false : true}}" class='list_box_top_authorHead_vip' src='../images/icon_userHead_vip.png'></image>
+      </view>
+      <!-- 作者姓名 -->
+      <view class='fl list_box_top_authorInfo'>
+        <view class='list_box_top_authorInfo_name'>{{item.nickname}}</view>
+        <view class='list_box_top_authorInfo_depict'>{{item.depict || '这个人很懒，什么都没留下'}}</view>
+      </view>
+      <!-- 取消 -->
+      <!-- <icon type='clear' size='24' color='#ccc' class='fr list_box_top_authorInfo_icon' id='{{item.id}}' data-index='{{index}}' catch:tap='followClearFun'></icon> -->
+      <image class='addFollow' src='../images/icon_add.png' wx:if="{{item.is_concern ==0 && item.id != user_id}}" id='{{item.id}}' data-index="{{index}}" catchtap='followFun'></image>
+      <view class='existFollow' src='../images/icon_add.png' wx:if="{{item.is_concern==1 && item.id != user_id}}" data-index="{{index}}">互相关注</view>
+    </view>
+    <!-- 下半部分 -->
+    <view class='list_box_bottom clearfix'>
+      <view class='fl list_box_bottom_box tc'>
+        <view class='list_box_bottom_box_title'>{{item.note_num}}</view>
+        <view class='list_box_bottom_box_depict'>笔记数量</view>
+      </view>
+      <view class='fl list_box_bottom_box tc'>
+        <view class='list_box_bottom_box_title'>{{item.sum_reach}}%</view>
+        <view class='list_box_bottom_box_depict'>近10篇达标</view>
+      </view>
+      <view class='fl list_box_bottom_box tc'>
+        <view class='list_box_bottom_box_title'>{{item.sum_increase}}%</view>
+        <view class='list_box_bottom_box_depict'>累计收益</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 暂无提示 -->
+<view wx:if="{{fansNull}}" class='drop'>暂无更多粉丝信息</view>
+<!-- 下拉提示 -->
+<view class='drop' wx:if="{{bottomState}}">下拉刷新   加载更多内容</view>

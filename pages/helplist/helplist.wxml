@@ -1,0 +1,21 @@
+<!-- <view class='title'>常见问题</view>
+<view class='box' id='{{array.common[0].id}}' catchtap='linkDetailsFun'>
+  <view class='clearfix bb'>
+    <view class='fl'>{{array.common[0].title}}</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<view class='box' id='{{array.common[1].id}}' catchtap='linkDetailsFun'>
+  <view class='clearfix bb'>
+    <view class='fl'>{{array.common[1].title}}</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<view class='box' id='{{array.common[2].id}}' catchtap='linkDetailsFun'>
+  <view class='clearfix'>
+    <view class='fl'>{{array.common[2].title}}</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view> -->
+<view class='title'>常见问题</view>
+<rich-text nodes="{{array.other}}"></rich-text>

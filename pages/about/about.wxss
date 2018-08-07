@@ -1,0 +1,8 @@
+.bb{border-bottom: 1rpx solid #eeeeee}
+.head{padding: 104rpx 0}
+.head image{display: block;margin: 0 auto 30rpx;width: 132rpx;height: 132rpx;border-radius: 20rpx}
+.head view{text-align: center;font-size: 30rpx;color: #2e2e2e}
+.box{box-sizing: border-box;padding: 0 30rpx;width: 100%;height: 100rpx;background-color: #fff}
+.box>view{box-sizing: border-box;padding: 32rpx 0;width: 100%;height: 100%;font-size: 0}
+.box>view>view:nth-child(1){font-size: 34rpx;line-height: 34rpx;color: #333333}
+.box>view>image:nth-child(2){margin: 0;width: 19rpx;height: 34rpx}

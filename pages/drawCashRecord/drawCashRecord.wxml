@@ -1,0 +1,31 @@
+<!--pages/drawCashRecord/drawCashRecord.wxml-->
+<!-- 导航 -->
+<view class='clearfix nav'>
+  <view class='fl'>{{date}}</view>
+  <view class='fr'>
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="{{oldTime}}" end="{{newTime}}" fields="month" bindchange="bindDateChange">
+        <view class="picker">
+          日历
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<!-- 列表 -->
+<view class='list'>
+  <view wx:for="{{array}}" class='box'>
+    <view class='clearfix'>
+      <view class='fl'>{{item.title}}</view>
+      <view class='fr'>+{{item.price}}</view>
+    </view>
+    <view class='clearfix'>
+      <view class='fl'>{{item.created_at}}</view>
+      <view class='fr'>元</view>
+    </view>
+  </view>
+</view>
+<!-- 暂无提示 -->
+<view wx:if="{{nullState}}" class='drop'>暂无更多数据</view>
+<!-- 下拉提示 -->
+<view class='drop' wx:if="{{moreState}}">下拉刷新   加载更多内容</view>

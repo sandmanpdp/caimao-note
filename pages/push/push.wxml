@@ -1,0 +1,48 @@
+<view class='box mt20'>
+  <view class='clearfix bb'>
+    <view class='fl'>是否推送关注人的新笔记消息</view>
+    <switch class='fr' checked="{{new_note==1?true:false}}" color='#11ad73' id='new_note' bindchange="switchChange"/>
+  </view>
+</view>
+<view class='box'>
+  <view class='clearfix bb'>
+    <view class='fl'>是否推送笔记结束消息</view>
+    <switch class='fr' checked="{{end_note==1?true:false}}" color='#11ad73' id='end_note' bindchange="switchChange"/>
+  </view>
+</view>
+<view class='box'>
+  <view class='clearfix bb'>
+    <view class='fl'>是否推送自己笔记的阅读评论消息</view>
+    <switch class='fr' checked="{{read_comment_note==1?true:false}}" id='read_comment_note' color='#11ad73' bindchange="switchChange"/>
+  </view>
+</view>
+<view class='box'>
+  <view class='clearfix'>
+    <view class='fl'>是否推送阅读过的笔记的观点补充消息</view>
+    <switch class='fr' checked="{{new_view==1?true:false}}" id='new_view' color='#11ad73' bindchange="switchChange"/>
+  </view>
+</view>
+<view class='box mt20'>
+  <view class='clearfix bb'>
+    <view class='fl'>是否推送打赏消息</view>
+    <switch class='fr' checked="{{reward==1?true:false}}" id='reward' color='#11ad73' bindchange="switchChange"/>
+  </view>
+</view>
+<view class='box'>
+  <view class='clearfix bb'>
+    <view class='fl'>是否推送笔记评论的回复消息</view>
+    <switch class='fr' checked="{{note_reply==1?true:false}}" id='note_reply' color='#11ad73' bindchange="switchChange"/>
+  </view>
+</view>
+<view class='box'>
+  <view class='clearfix'>
+    <view class='fl'>是否推送笔记被设置精选的消息</view>
+    <switch class='fr' checked="{{note_hot==1?true:false}}" id='note_hot' color='#11ad73' bindchange="switchChange"/>
+  </view>
+</view>
+<view class='box'>
+  <view class='clearfix'>
+    <view class='fl'>是否推送关注人的新观点消息</view>
+    <switch class='fr' checked="{{note_hot==1?true:false}}" id='note_hot' color='#11ad73' bindchange="switchChange"/>
+  </view>
+</view>

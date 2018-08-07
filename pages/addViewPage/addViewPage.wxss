@@ -1,0 +1,35 @@
+/* pages/addViewPage/addViewPage.wxss */
+.addView {
+  width: 100%;
+}
+textarea ,.viewBox ,.viewContainer{
+  width: 100%;
+}
+.viewBox {
+  margin: 10rpx 0;
+  background: #fff;
+  box-sizing: border-box;
+}
+.viewContent {
+  height: 200rpx;
+}
+.viewTitle {
+  height: 100%;
+}
+.viewContainer {
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+.viewTitleBox {
+  background: #fff;
+  margin: 20rpx 0;
+  border-bottom:1rpx solid  #eee;
+  height: 108rpx; 
+}
+
+.viewBox ,.viewTitleBox{
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.reading{box-sizing: border-box;margin: 80rpx 0 0;height: 100rpx;line-height: 100rpx;text-align: center;color: #fff;font-size: 40rpx;background-color: #2772ff}

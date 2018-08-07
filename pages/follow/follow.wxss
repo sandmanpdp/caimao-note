@@ -1,0 +1,14 @@
+/* pages/follow/follow.wxss */
+.list_box{box-sizing: border-box;margin-top: 20rpx;padding: 30rpx 30rpx 36rpx;height: 260rpx;background-color: #fff}
+.list_box_top_authorHead{position: relative;width: 82rpx;height: 82rpx}
+.list_box_top_authorHead_img{width: 100%;height: 100%;border-radius: 10rpx}
+.list_box_top_authorHead_vip{position: absolute;bottom: -10rpx;right: -10rpx;width: 34rpx;height: 34rpx}
+.list_box_top_authorInfo{margin: 0 0 0 32rpx}
+.list_box_top_authorInfo_name{margin: 6rpx 0 8rpx;line-height: 34rpx;font-size: 34rpx;color: #141414}
+.list_box_top_authorInfo_depict{font-size: 24rpx;color: #808080}
+.list_box_top_authorInfo_icon{margin: 15rpx 0 0}
+.list_box_bottom{margin: 36rpx 0 0 110rpx;width: 580rpx;height: 74rpx}
+.list_box_bottom_box{margin: 0 70rpx 0 0}
+.list_box_bottom_box:last-child{margin: 0}
+.list_box_bottom_box_title{margin: 0 0 14rpx;line-height: 34rpx;font-size: 40rpx;color: #ffad2b;font-weight: 400}
+.list_box_bottom_box_depict{font-size: 24rpx;color: #808080}

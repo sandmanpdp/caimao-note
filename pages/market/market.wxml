@@ -1,0 +1,15 @@
+<!--pages/market/market.wxml-->
+<view class='goodsContainer clearfix'>
+  <view class='goodsBox fl' wx:for='{{goodsData}}' id='{{index}}' catchtap='getGoods'>
+    <view class='picBox'>
+      <image class='picContent' src='{{item.img}}'>
+      
+      </image>
+    </view>
+    <view class='goodsTitle'>{{item.title}}</view>
+    <view class='valueBox'>
+      <image src='../images/yuanbaoN.png' class='yuanbao'></image>
+      <view class='value'>{{item.price}}</view>
+    </view>
+  </view>
+</view>

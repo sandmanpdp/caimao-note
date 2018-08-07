@@ -1,0 +1,12 @@
+/* pages/drawCashRules/drawCashRules.wxss */
+.drawCashBox {
+  width: 96%;
+  height: 100%;
+  padding: 20rpx; 
+  font-size: 32rpx;
+  color: #A8A8A9;
+}
+.drawCashContent {
+  font-size: 32rpx;
+  color: #A8A8A9;
+}

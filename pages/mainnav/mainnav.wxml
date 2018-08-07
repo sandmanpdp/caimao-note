@@ -1,0 +1,39 @@
+<!--pages/mainnav/mainnav.wxml-->
+<!-- 主导航 -->
+<view class='mainNav'>
+  <view class='mainNav_round'></view>
+  <view class='mainNav_mask'></view>
+  <view class='mainNav_fun'>
+    <!-- 首页 -->
+    <navigator url="#" open-type='redirect' hover-class="none">
+      <view class='mainNav_fun_icon mainNav_fun_home'>
+        <image src='../images/icon_home_true.png'></image>
+        </view>
+    </navigator>
+    <!-- 笔记 -->
+    <navigator url="/pages/logs/logs" open-type='redirect' hover-class="navigator-hover">
+      <view class='mainNav_fun_icon mainNav_fun_note'>
+        <image src='../images/icon_note_false.png'></image>
+      </view>
+    </navigator>
+    <!-- 撰写 -->
+    <navigator url="/pages/logs/logs" open-type='redirect' hover-class="navigator-hover">
+      <view class='mainNav_fun_write'>
+        <image src='../images/icon_write.png'></image>
+      </view> 
+    </navigator>
+    <!-- 我的 -->
+    <navigator url="/pages/my/my" open-type='redirect' hover-class="navigator-hover">
+      <view class='mainNav_fun_icon mainNav_fun_my'>
+        <image src='../images/icon_my_false.png'></image>
+      </view>
+    </navigator>
+    <!-- 关注 -->
+    <navigator url="/pages/logs/logs" open-type='redirect' hover-class="navigator-hover">
+      <view class='mainNav_fun_icon mainNav_fun_follow'>
+        <image src='../images/icon_follow_false.png'></image>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view catchtap='fun'>adskjhjskdbnfjklsdbflsjdblj</view>

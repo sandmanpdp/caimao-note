@@ -1,0 +1,69 @@
+<view class=''>
+  <!-- 主体 -->
+  <view class='section'>
+    <view class='clearfix'>
+      <image class='fl' src='../images/ta.jpg'></image>
+      <text class='fl'>炒股不辛苦</text>
+    </view>
+    <view class='text'>请精选两只股票要求月K线已击穿布林线下轨，现股价已超跌倒历史最高价三分之一或四分之一处，业绩优良不亏损，有安全边际，行业发展趋势尚可，适合买入长线持有的超跌股。顺便对照详细分析一下600351亚宝药业和002376新北洋与你提供的两只那两只票更好，如何建仓方法讲明，是低位分批买入好还是等有大资金进入刚启动再回调时买入好，详谈一下建仓方法因担心现在买入后上述股票以后得不到大资金关注而被边缘化。不要创业板的。非诚勿扰。</view>
+    <view class='answer'>
+      <view>悬赏￥10</view>
+      <view>离悬赏结束时间还有 12小时3分</view>
+      <view>我来回答</view>
+      <image src='../images/icon_cue.png'></image>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class='list'>
+    <view class='nav clearfix'>
+      <view id='n0' class="fl {{navIndex==0?'bb':''}}" catch:tap='setNavIndexFun'>全部回答</view>
+      <view id='n1' class="fl {{navIndex==1?'bb':''}}" catch:tap='setNavIndexFun'>满意回答</view>
+    </view>
+    <view wx:if="{{navIndex==0?true:false}}">
+      <view class='box'>
+        <view class='title clearfix'>
+          <image class='fl' src='../images/ta.jpg'></image>
+          <text class='fl'>gusui</text>
+          <view class='fr'>满意答案</view>
+        </view>
+        <view class='text'>这个问题，起码价值3万。这个问题，起码价值3万。这个问题，起码价值3万。这个问题，起码价值3万。</view>
+        <view class='fun clearfix'>
+          <text class='fl'>10-27  12:42</text>
+          <view class='fr'>
+            <image src='../images/icon_laud2.png'></image>
+            <text>99</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{navIndex==1?true:false}}">
+      <view class='box'>
+        <view class='title clearfix'>
+          <image class='fl' src='../images/ta.jpg'></image>
+          <text class='fl'>gusui</text>
+          <view class='fr'>满意答案</view>
+        </view>
+        <view class='text'>adasdasdqw4d8w4894s4ew684t86er4g65dsdadadadasdadasda4g56sd41f6</view>
+        <view class='fun clearfix'>
+          <text class='fl'>10-27  12:42</text>
+          <view class='fr'>
+            <image src='../images/icon_laud2.png'></image>
+            <text>99</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 下拉提示 -->
+  <view class='drop'>没有更多回答</view>
+  <!-- 评论 -->
+  <view class='pf comment clearfix'>
+    <input class='fl input' placeholder='说点什么...'></input>
+    <view class='fl pr'>
+        <image class='fl' src='../images/icon_comment.png'></image>
+        <view class='number'>699</view>
+    </view>
+    <image class='fl' src='../images/icon_share.png'></image>
+    <image class='fl' src='../images/icon_collect.png'></image>
+  </view>
+</view>

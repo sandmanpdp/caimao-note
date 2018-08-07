@@ -1,0 +1,9 @@
+<!--pages/authSuccess/authSuccess.wxml-->
+<view class='imgBox'>
+  <image class='img' src='../images/success.png'></image>
+</view>
+<view class='mainTitle'>
+  提交成功
+</view>
+<view class='detailText'>已提交至审核，3-5个工作日出结果</view>
+<view class='goToMall' catchtap='goToMall'>前往积分商城</view>

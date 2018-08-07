@@ -1,0 +1,17 @@
+<!-- <view class='box' catchtap='oneFun'>
+  <view class='clearfix'>
+    <view class='fl'>留言反馈</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view> -->
+<view class='box' catchtap='twoFun'>
+  <view class='clearfix bb'>
+    <view class='fl'>使用帮助</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<view class='pr btn_box'>
+  <button class='btn' open-type="contact" plain="true" lang="zh_CN" hover-class='none' session-from="" send-message-title="" send-message-path="" send-message-img="" show-message-card="" bindcontact="">进入客服会话</button>
+  <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+</view>
+

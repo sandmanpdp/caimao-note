@@ -1,0 +1,6 @@
+.mt20{margin-top: 20rpx}
+.bb{border-bottom: 1px solid #eeeeee}
+.box{box-sizing: border-box;padding: 0 30rpx;width: 100%;height: 120rpx;background-color: #fff}
+.box>view{box-sizing: border-box;padding: 42rpx 0;width: 100%;height: 100%;font-size: 0}
+.box>view>view:nth-child(1){font-size: 34rpx;line-height: 34rpx;color: #333333}
+switch{margin-top: -14rpx}

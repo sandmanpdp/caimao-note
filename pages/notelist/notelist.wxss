@@ -1,0 +1,84 @@
+/* pages/oxnotes/oxnotes.wxss */
+/* 头部 */
+.head{box-sizing: border-box;margin-bottom: 30rpx;position: relative;padding: 29rpx 0;height: 88rpx;background-color: #fff;border-bottom: 2rpx solid #dddddd;z-index: 9999}
+.head_condition_noe,.head_condition_two{box-sizing: border-box;position: relative;width: 50%}
+.head_condition_noe{padding-left: 126rpx;}
+.head_condition_two{padding-left: 106rpx;}
+.head_condition_option{position: relative;line-height: 30rpx;font-size: 30rpx;color: #666}
+/* 上三角形 */
+.head_icon_trigon{position: absolute;top: -14rpx;width:0;height:0;border-width:0 12rpx 12rpx;border-style:solid;border-color:transparent transparent #dddddd}
+.head_icon_trigon_one{left: 176rpx}
+.head_icon_trigon_two{left: 498rpx}
+/* 选择列表 */
+.head_list{position: absolute;top: 88rpx;left: 0;padding: 26rpx 0 30rpx;width: 100%;background-color: #fff;border-bottom: 2rpx solid #dddddd}
+.head_list_box{box-sizing: border-box;padding: 16rpx 0 16rpx 126rpx;height: 60rpx;}
+.head_list_box_option{margin-right: 40rpx;line-height: 30rpx;font-size: 30rpx;color: #2e2e2e}
+/* icon：success_no_circle 组件样式调整 */
+.success_no_circle{position: relative;top: -4rpx}
+/* 选中灰色背景 */
+.bc_gray{background-color: #f5f5f9}
+.bc_none{background-color: #fff}
+/* 笔记列表 */
+.killer{margin-top: 27rpx;padding-bottom: 35rpx;background-color: #fff}
+.killer_section{padding: 0 30rpx}
+.killer_section_box{box-sizing: border-box;position: relative;margin-top: 30rpx;padding: 40rpx 19rpx 34rpx;width: 695rpx;height: 255rpx;border: 3rpx solid #dddddd;border-top-left-radius: 30rpx;border-top-right-radius: 30rpx;background-color: #fff}
+.killer_section_box:first-child{margin-top: 10rpx}
+.killer_section_icon_line{position: absolute;top: 50%;left: 243rpx;margin-top: -75rpx;width: 2rpx;height: 150rpx;background-color: #dddddd}
+.killer_section_icon_buy{position: absolute;top:45rpx;right: -12rpx;width: 140rpx;height: 50rpx;line-height: 50rpx;border-top-left-radius: 25rpx;border-bottom-left-radius: 25rpx;font-size: 24rpx;text-align: center;color: #fff}
+.killer_section_icon_trigon{position: absolute;top: 95rpx;right: -12rpx;width: 0;height: 0;border-right: 11rpx solid #f5f5f9}
+.buy_false{background-color: #dddddd}
+.trigon_false{border-top: 11rpx solid #dddddd;}
+.buy_true{background-color: #ff9b74}
+.trigon_true{border-top: 11rpx solid #ff9b74}
+.killer_section_box_left{float: left;width: 209rpx}
+.killer_section_box_left_userHead{display: block;margin: 0 auto;width: 83rpx;height: 83rpx;border-radius: 10rpx}
+.killer_section_box_left_userName{margin: 17rpx auto 8rpx;width: 70%;font-size: 28rpx;color: #3e3e3e;text-align: center}
+.killer_section_box_left_depict{width: 100%;font-size: 24rpx;color: #b9b9b9;text-align: center}
+.killer_section_box_right{float: right;width: 376rpx;}
+.killer_section_box_right_one_title{margin-bottom: 6rpx;font-size: 38rpx;color: #141414;line-height: 38rpx;width: 200rpx}
+.killer_section_box_right_one_depict{float: left;margin: 5rpx 20rpx 8rpx 0;font-size: 24rpx;color: #2772ff}
+.killer_section_box_right_two_left{float: left}
+.killer_section_box_right_two_left_title{width: 225rpx;font-size: 36rpx;color: #e32f37}
+.killer_section_box_right_two_left_depict{font-size: 26rpx;color: #b9b9b9}
+.killer_section_box_right_two_right{float: right}
+.killer_section_box_right_two_right_title{font-size: 36rpx;color: #ffad2b;text-align: center}
+.killer_section_box_right_two_right_depict{font-size: 26rpx;color: #b9b9b9}
+/* 箭头：下 */
+.icon_bottom_arrow{position: relative;margin-left: 20rpx;top: 6rpx;width: 34rpx;height: 19rpx}
+.needPriceYuanbao {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%); 
+}
+.needPriceText{
+  display: inline-block;
+  font-size:36rpx;
+  color:#ffad2b;
+  text-align:center;
+  line-height: 21rpx;
+  padding-left: 50rpx;
+}
+.freePriceText{
+  display: inline-block;
+  font-size:36rpx;
+  color:#ffad2b;
+  line-height: 21rpx;
+  text-align:center;
+}
+.seal {
+  width: 68rpx;
+  height: 54rpx;
+  position: absolute;
+  top:110rpx;
+  left:179rpx;
+}
+.seal image {
+  width: 68rpx;
+  height: 54rpx;
+}
+.pstRelative {
+  position: relative;
+}

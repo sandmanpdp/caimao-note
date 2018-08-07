@@ -1,0 +1,8 @@
+<!--pages/aksStock/aksStock.wxml-->
+<view class='askStockBox'>
+  <image mode='scaleToFill' src='../images/diagnosis_bg.jpg' class='diagnosis_bg'></image>
+  <view class='uploadImgBox'>
+    <image src='../images/uploadImg.png' class='uploadImg' catchtap='uploadImg'></image>
+  </view>
+</view>
+<canvas canvas-id='imgCanvas'></canvas>

@@ -1,0 +1,78 @@
+
+/* 导航 */
+.nav{padding: 28rpx 0;background-color: #fff;border-bottom: 2rpx solid #dcdcdc; }
+.nav view{width: 50%;font-size: 34rpx;line-height: 34rpx;color: #b9b9b9;text-align: center;font-weight: 500}
+.co3f86ff{color: #3f86ff!important}
+.co93b8ff{color: #93b8ff!important}
+/* 列表 */
+.list{}
+.list .box{margin-top: 20rpx;background-color: #fff;font-size: 0}
+.list .box:first-child{margin: 0}
+.list .box .one{margin-bottom: 30rpx}
+.list .box .one .left text{font-weight: 400}
+.list .box .one .left text:nth-child(1){margin-right: 10rpx;font-size: 36rpx;color: #333333;font-weight: bold;line-height: 0}
+.list .box .one .left text:nth-child(2){font-size: 32rpx;color: #fc7946;line-height: 36rpx}
+.list .box .one .right{font-size: 26rpx;color: #999;height: 36rpx;line-height: 36rpx}
+.list .box .two{margin-bottom: 30rpx}
+.list .box .two>view{width: 49.8%;text-align: center}
+.list .box .two>view:first-child{border-right: 1px solid #dddddd}
+.list .box .two>view>view:nth-child(1){margin-bottom: 20rpx;font-size: 40rpx;color: #e32f37;line-height: 40rpx;font-weight: 600}
+.list .box .two>view>view:nth-child(2){font-size: 26rpx;color: #666;line-height: 26rpx}
+.list .box .three{font-size: 26rpx;line-height: 26rpx;padding: 0 30rpx 30rpx 30rpx;}
+.list .box .three>view:nth-child(1){color: #666}
+.list .box .three>view:nth-child(2){color: #999999}
+.list .box .three>view:nth-child(2) .icon{margin-right: 20rpx;width: 32rpx;height: 24rpx;vertical-align: middle}
+.list .box .three>view:nth-child(2) text{vertical-align: middle}
+ /* by pdp */
+.rateIsMinus {
+  color: #42c110 !important;
+}
+.rateIsPositive {
+  color: #e32f37 !important;
+}
+.needPriceYuanbao {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 47%;
+  transform: translateY(-50%);
+}
+.needPriceText {
+  font-size:32rpx;
+  color:#fc7946;
+  line-height:36rpx;
+  padding-left: 50rpx;
+}
+.freePriceText {
+  font-size:32rpx;
+  color:#fc7946;
+  line-height:36rpx;
+}
+.oneCode {
+  margin-right:10rpx;
+  font-size:36rpx !important;
+  color: #666 !important;
+}
+.oneTitle {
+  border-bottom: 2rpx solid #eee;
+
+  padding: 22rpx 30rpx;
+}
+.pstRel {
+  position: relative;
+}
+.seal {
+  width: 68rpx;
+  height: 54rpx;
+  position: absolute;
+  top:20rpx;
+  left: 36rpx;
+}
+.selectedBar {
+  width: 70rpx !important;
+  border-bottom: 12rpx solid #3f86ff;
+  position: absolute;
+  bottom: -30rpx;
+  left: 152rpx;
+}

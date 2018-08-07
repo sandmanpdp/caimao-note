@@ -1,0 +1,4 @@
+.box{margin: 20rpx 0 0;padding: 0 30rpx;height: 100rpx;background-color: #fff;line-height: 100rpx}
+.box>view{width: 140rpx;font-size: 34rpx;color: #333333}
+.box>input{margin-left: 30rpx;width: 518rpx;height: 100%;font-size: 34rpx;color: #b9b9b9}
+.box>picker{margin-left: 30rpx;width: 518rpx;height: 100%;font-size: 34rpx;color: #b9b9b9}

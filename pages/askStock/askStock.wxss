@@ -1,0 +1,24 @@
+/* pages/aksStock/aksStock.wxss */
+page {
+  height: 100%;
+}
+.askStockBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.diagnosis_bg {
+  width: 100%;
+  height: 100%;
+}
+.uploadImgBox {
+  position: absolute;
+  width: 100%;
+  height: 90rpx;
+  bottom: 170rpx;
+  text-align: center;
+}
+.uploadImg {
+  width:  380rpx;
+  height: 90rpx;
+}

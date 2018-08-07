@@ -1,0 +1,12 @@
+<view class='addView'>
+  <view class='viewContainer'>
+    <view class='viewTitleBox'>
+      <textarea class='viewTitle' placeholder='请输入2~16字数的补充观点标题' maxlength='16' bindinput='viewTitle'></textarea>
+    </view> 
+    <view class='viewBox'>
+      <textarea class='viewContent' placeholder='请输入补充观点' bindinput='viewContent'>
+      </textarea>
+    </view>
+  </view>
+  <view class='reading' catchtap='addView'>补充观点</view>
+</view>

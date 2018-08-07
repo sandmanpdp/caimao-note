@@ -1,0 +1,53 @@
+<!--pages/drawcash.wxml-->
+<!-- 提现金额 -->
+<view class='drawCash_box fl'>
+  <view class='drawCash_titile_box fl'>
+    <view class='drawCash_titile fl'>
+      提现金额
+    </view>
+    <view class='drawCash_titile_limit fr'>
+      单笔最低100元，每日最高1000元
+    </view>
+  </view>
+  <view class='moneyInput_box fl'>
+    <view class='moneyLabel fl'>
+      ￥
+    </view>
+    <view class='moneyInput fl'>
+      <input class='inputBox' type='number' focus='true' bindinput='cashNum' auto-focus='true'></input>
+    </view>
+  </view>
+</view>
+<!-- 钻石数量 -->
+<view class='damondNum_box fl'>
+  <view class='damondNum'>
+    剩余钻石： {{demond}}
+  </view>
+</view>
+<!-- 到账方式 -->
+<view class='cashWay_box fl'>
+  <view class='cashWay fl'>
+    到账方式
+  </view>
+  <image class='fl' src='../images/icon_wx.png'></image>
+  <view class='cashWay_icon fr'>
+    银行卡
+  </view>
+</view>
+<!-- 确定按钮 -->
+<view class='tips_box fl'>
+  <view class='tips'>
+    提示：每月25日开始才能提现
+  </view>
+</view>
+<view class='commitBtn_box fl'>
+  <view class='commitBtn' catchtap='drawCash'>
+    确定
+  </view>
+</view>
+<!-- 提现规则/记录 -->
+<view class='drawCashBox fl'>
+  <view class='drawCashRules fl' catchtap='drawCashRules'>提现规则</view>
+  <view class='drawCashSplit fl'></view>
+  <view class='drawCashRecord fl' catchtap='drawCashRecord'>提现记录</view>
+</view>

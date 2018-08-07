@@ -1,0 +1,25 @@
+<view class='box'>
+  <view class='other'>
+    <view>积分是什么?</view>
+    <view>积分是黑石智投平台为新用户重磅推出的一项福利，用户可以通过分享文章、笔记、问股或邀请好友等方式获得积分，积分可用于查看平台上的笔记，打赏作者等。    </view>
+  </view>
+  <view class='other'>
+    <view>积分如何获得?</view>
+    <view>1.邀请好友下载，注册APP</view>
+    <view>2.每天登陆APP</view>
+    <view>3.分享平台文章、观点</view>
+    <view>4.点赞平台文章、观点、笔记</view>
+  </view>
+  <view class='other'>
+    <view>积分如何使用?</view>
+    <view>积分可用于查看平台付费文章、笔记、打赏作者</view>
+  </view>
+  <view class='other'>
+    <view>积分会过期吗?</view>
+    <view>积分有效期为365天，到期清零</view>
+  </view>
+  <view class='other'>
+    <view>特别说明</view>
+    <view>用户需遵守黑石智投平台公布的积分获取及使用相关规则，不得违反相关规则。通过不正当手段或通过任何作弊行为不正当获取积分的用户，黑石智投平台有权扣除该用户通过其不当行为获得的积分或全部积分。</view>
+  </view>
+</view>

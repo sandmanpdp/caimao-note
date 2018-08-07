@@ -1,0 +1,52 @@
+.list_box{box-sizing: border-box;padding: 30rpx 30rpx 40rpx;background-color: #fff;border-top: 1px solid #dddddd}
+.list_box_top_authorHead{position: relative;width: 82rpx;height: 82rpx}
+.list_box_top_authorHead_img{width: 100%;height: 100%;border-radius: 50%}
+.list_box_top_authorHead_vip{position: absolute;bottom: -10rpx;right: -10rpx;width: 34rpx;height: 34rpx}
+.list_box_top_authorInfo{margin: 0 0 0 32rpx}
+.list_box_top_authorInfo_name{margin: 6rpx 0 8rpx;line-height: 34rpx;font-size: 34rpx;color: #141414}
+.list_box_top_authorInfo_depict{margin-top: 16rpx;max-width: 460rpx;font-size: 24rpx;color: #808080;line-height: 24rpx}
+.list_box_bottom{margin: 40rpx 0 0 110rpx;width: 580rpx}
+.list_box_bottom_box{margin: 0 70rpx 0 0}
+.list_box_bottom_box:last-child{margin: 0}
+.list_box_bottom_box_title{margin: 0 0 18rpx;line-height: 34rpx;font-size: 40rpx;color: #fc7946;font-weight: 600}
+.list_box_bottom_box_depict{font-size: 24rpx;color: #808080}
+
+.title{font-size: 30rpx;color: #b9b9b9;line-height: 88rpx;text-align: center;background-color: #fff}
+.fun{font-size: 0}
+.fun >view:nth-child(1){margin-top: 20rpx}
+.fun >view:nth-child(1) image{margin-right: 20rpx;width: 31rpx;height: 31rpx;vertical-align: middle}
+.fun >view:nth-child(1) text{font-size: 26rpx;vertical-align: middle;color: #b9b9b9}
+.co2772ff{color: #2772ff!important}
+
+.more{padding: 0 30rpx;height: 100rpx;line-height: 100rpx;border-top: 1px solid #dddddd;background-color: #fff}
+.more view{font-size: 30rpx;color: #141414}
+.more image{margin-top: 33rpx;width: 19rpx;height: 34rpx}
+
+.box{margin-top: 40rpx}
+.box:first-child{margin: 0}
+ /* by pdp */
+.rateIsMinus {
+  color: #42c110 !important;
+}
+.rateIsPositive {
+  color: #e32f37 !important;
+}
+.sortPicker {
+  height: 88rpx;
+  line-height: 88rpx;
+  color:#666666;
+}
+.sortPicker view {
+  font-size: 30rpx;
+}
+.icon_bottom_arrow {
+  position: relative;
+  margin-left: 10rpx;
+  top: -2rpx;
+  width: 34rpx;
+  height: 19rpx;
+}
+.selecteBox {
+  background: #fff;
+  text-align: center;
+}

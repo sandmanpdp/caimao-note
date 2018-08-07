@@ -1,0 +1,44 @@
+.cdfff{color: #fff!important}
+.bkffad2b{background-color: #ffad2b}
+.bb{border-bottom: 1px solid #eee}
+/* 头部 */
+.head{padding: 70rpx 30rpx;background-color: #fff}
+.head>view{box-sizing: border-box;position: relative;padding: 30rpx 10rpx 30rpx;width: 200rpx;height: 140rpx;border: 1px solid #D0D0D0;border-radius: 20rpx;text-align: center;overflow: hidden;margin: 15rpx 15rpx;}
+
+/* .head>view:nth-child(even){margin: 0} */
+.head>view>view:nth-child(1){margin-bottom: 16rpx;font-size: 36rpx;color: #2e2e2e;line-height: 36rpx}
+.head>view>view:nth-child(2){font-size: 28rpx;color: #fc7946;line-height: 30rpx}
+.head>view>image{position: absolute;top: 0;right: 0;width: 83rpx;height: 83rpx}
+#otherMoney  {
+  width: 94%;
+  height: 110rpx;
+}
+
+/* 主体 */
+.section{margin-top: 20rpx;padding: 0 30rpx;background-color: #fff}
+.section>view:nth-child(1){height: 100rpx;line-height: 100rpx;font-size: 34rpx;color: #333333}
+.section>.box{box-sizing: border-box;padding: 40rpx 0;height: 130rpx}
+.section>.box>image:nth-child(1){margin-right: 20rpx;width: 59rpx;height: 53rpx}
+.section>.box>view:nth-child(2){font-size: 30rpx;color: #333333;line-height: 53rpx}
+.section>.box>image:nth-child(3){margin-top: 11.5rpx;width: 30rpx;height: 30rpx}
+/* 立即充值 */
+.btn{margin: 80rpx auto;width: 690rpx;height: 100rpx;line-height: 100rpx;text-align: center;font-size: 34rpx;color: #ffffff;background-color: #3f86ff;border-radius: 20rpx}
+
+.selectedMark {
+  width:32rpx;
+  height:32rpx;
+  position:absolute;
+  bottom:0;
+  right:0;
+  background: #fc7946;
+  border-top-left-radius:17rpx;
+}
+.selectedIcon {
+  font-size: 40rpx;
+  position: relative;
+  top:-16rpx;
+  left: 3rpx;
+}
+.selectedBox {
+  border: 1px solid #fc7946 !important;
+}

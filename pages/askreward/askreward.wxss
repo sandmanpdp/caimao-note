@@ -1,0 +1,38 @@
+.cob9b9b9{color: #b9b9b9}
+.bgfc7946{background-color: #fc7946;color: #fff!important}
+/* 输入框 */
+.input{margin-bottom: 20rpx;padding: 30rpx;background-color: #fff;font-size: 30rpx;color: #b9b9b9}
+.input input{height: 80rpx}
+.input view{text-align: right;color: #808080}
+/* 股票 */
+.shares{margin-bottom: 20rpx;padding: 0 30rpx;background-color: #fff}
+.shares>view{height: 100rpx;line-height: 100rpx}
+.shares>view:nth-child(1){border-bottom: 1px solid #dddddd}
+.shares>view text:nth-child(1){margin-right: 27rpx;font-size: 36rpx;color: #2e2e2e}
+.shares>view input{width: 480rpx;height: 100rpx;font-size: 30rpx;color: #b9b9b9}
+.shares>view text:nth-child(3){font-size: 36rpx;color: #2772ff}
+/* 须知 */
+.notice{padding: 0 30rpx;background-color: #fff;line-height: 100rpx}
+.notice text{font-size: 36rpx;color: #2e2e2e}
+.notice image{margin-top: 33rpx;width: 19rpx;height: 34rpx}
+/* 金额 */
+.sum{padding: 0 30rpx}
+.sum>view:nth-child(1){line-height: 100rpx;font-size: 30rpx;color: #2e2e2e}
+.sum>view:nth-child(2) view{margin-bottom: 20rpx;width: 330rpx;height: 64rpx;line-height: 64rpx;border: 1px solid #fc7946;font-size: 30rpx;color: #fc7946;text-align: center;border-radius: 10rpx}
+.sum>view:nth-child(2) view:nth-child(odd){margin-right: 22rpx}
+.sum .depict{margin-top: 25rpx;font-size: 24rpx;color: #b9b9b9;text-align: center}
+/* 发布 */
+.reading{margin: 80rpx 0 0;height: 100rpx;line-height: 100rpx;text-align: center;color: #fff;font-size: 40rpx;background-color: #2772ff}
+/* 提问须知 */
+.mask .one{position: absolute;top: 50%;left: 50%;transform: translate3d(-50%,-70%,0);width: 600rpx;height: 540rpx;background-color: #fff;border-radius: 30rpx}
+.mask .one>view:nth-child(1){line-height: 105rpx;border-bottom: 1px solid #dddddd;text-align: center;font-size: 36rpx;color: #fc7946}
+.mask .one>view:nth-child(2){padding: 60rpx 40rpx 30rpx 40rpx}
+.mask .one>view:nth-child(2) view{padding-bottom: 12rpx;font-size: 30rpx;color: #808080}
+.mask .one>view:nth-child(3){text-align: center;font-size: 34rpx;color: #2772ff}
+.mask .one image{position: absolute;bottom: -120rpx;left: 50%;margin-left: -23.5rpx;width: 47rpx;height: 47rpx}
+/* 其他金额 */
+.mask .two{position: absolute;top: 50%;left: 50%;transform: translate3d(-50%,-70%,0);width: 537rpx;height: 400rpx;background-color: #fff;border-radius: 30rpx}
+.mask .two view:nth-child(1){line-height: 105rpx;font-size: 36rpx;color: #2e2e2e;text-align: center}
+.mask .two input{box-sizing: border-box;margin: 15rpx auto 40rpx;padding: 0 30rpx;width: 420rpx;height: 76rpx;border: 1px solid #fc7946;border-radius: 38rpx;font-size: 26rpx;color: #fc7946}
+.mask .two view:nth-child(3){margin: 0 auto 30rpx;width: 260rpx;height: 70rpx;text-align: center;background-color: #fc7946;color: #fff;font-size: 30rpx;line-height: 70rpx;border-radius: 35rpx;}
+.mask .two view:nth-child(4){margin: 0 auto;width: 260rpx;text-align: center;font-size: 26rpx;color: #b9b9b9;line-height: 26rpx}

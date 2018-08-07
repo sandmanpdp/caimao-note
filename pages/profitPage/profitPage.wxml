@@ -1,0 +1,36 @@
+<!--pages/profitPage/profitPage.wxml-->
+<!-- 用户自己 -->
+<view wx:if="{{selfData != '' ? true : false}}" style='margin-bottom:20rpx' class='userBox' catchtap='toMasterPage' data-uid="{{user_id}}">
+  <view class='user clearfix'>
+    <view class='userNo fl clearfix' style='margin-left:20rpx;'></view>
+    <view class='userPortrait fl clearfix'>
+       <image class='userPortrait' src='{{userAvatar}}'></image> 
+    </view>
+    <view class='userNameBox fl clearfix'>
+      <view class='userName'>{{userName}}</view>
+      <view class='time'>{{selfData.created_at}}</view>
+    </view>
+    <view class='money fr clearfix'>
+      <image src='../images/yuanbaoN.png' class='yuanbao'></image> 
+      <view class='moneyBox'>{{selfData.sum}}</view>
+    </view>
+  </view>
+</view>
+<!-- 其他用户 -->
+<view class='userBox' wx:for="{{profitInfo}}" data-uid='{{item.user_id}}' catchtap='toMasterPage'>
+  <view class='user clearfix'>
+    <view class='userNo fl clearfix'>{{index+1}}</view>
+    <view class='userPortrait fl clearfix'>
+       <image class='userPortrait' src='{{item.avatar}}'></image> 
+    </view>
+    <view class='userNameBox fl clearfix'>
+      <view class='userName'>{{item.nickname}}</view>
+      <view class='time'>{{item.created_at}}</view>
+    </view>
+    <view class='money fr clearfix'>
+      {{item.price}}
+    </view>
+  </view>
+</view>
+<view wx:if="{{!null}}" class='drop'>暂无更多打赏数据</view>
+<view wx:if="{{null}}" class='drop'>下拉刷新   加载更多内容</view>

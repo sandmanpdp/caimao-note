@@ -1,0 +1,18 @@
+.bb{border-bottom: 1px solid #eee}
+/* 头部 */
+.head{padding: 60rpx 0 70rpx;background-color: #fff}
+.head>view{width: calc(100% / 2 - 26rpx);text-align: center}
+.head>view>view:nth-child(1){font-size: 32rpx;color: #dddddd}
+.head>view>view:nth-child(2){font-size: 70rpx;color: #fc7946}
+.head>image{margin-top: 50rpx;width: 51rpx;height: 38rpx}
+/* 说明 */
+.explain{padding: 30rpx;font-size: 26rpx;color: #999999}
+/* 支付 */
+.section{padding: 0 30rpx;background-color: #fff}
+.section>view:nth-child(1){height: 100rpx;line-height: 100rpx;font-size: 34rpx;color: #333333}
+.section>.box{box-sizing: border-box;padding: 40rpx 0;height: 130rpx}
+.section>.box>image:nth-child(1){margin-right: 20rpx;width: 59rpx;height: 53rpx}
+.section>.box>view:nth-child(2){font-size: 30rpx;color: #333333;line-height: 53rpx}
+.section>.box>image:nth-child(3){margin-top: 11.5rpx;width: 30rpx;height: 30rpx}
+/* 立即充值 */
+.btn{margin: 80rpx auto;width: 690rpx;height: 100rpx;line-height: 100rpx;text-align: center;font-size: 34rpx;color: #ffffff;background-color: #3f86ff;border-radius: 20rpx}

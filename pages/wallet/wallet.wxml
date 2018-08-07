@@ -1,0 +1,118 @@
+<!-- 头部 -->
+<view class='head pr'>
+  <image src='../images/icon_wallet_bg.png'></image>
+  <view class='clearfix'>
+    <view class='fl'>
+      <view>
+        账户积分
+        <image class='question' src='../images/icon_problem.png' catchtap='problem'></image>
+      </view>
+      <view>{{walletArray.score}}</view>
+    </view>
+    <image class='fr' src='../images/icon_recharge.png' catchtap='rechargeFun'></image>
+  </view>
+</view>
+<!-- 钻石收益 by pdp -->
+<view class='damond box'>
+  <view class='clearfix'>
+    <view class='fl'>钻石收益</view>
+    <image class='fl' src='../images/icon_problem.png' catchtap='problem'></image>
+    <view class='fl damondValue'>{{walletArray.sum_cash}}</view>
+    <view class='fr drawCash' catchtap='drawCashBtn'>
+      提现
+    </view>
+  </view>
+</view>
+<!-- 个人积分 -->
+<!-- <view class='box mb20'>
+  <view class='clearfix'>
+    <view class='fl'>个人积分</view>
+    <image class='fl' src='../images/icon_problem.png' catchtap='integralruleLinkFun'></image>
+    <view class='fl'>{{walletArray.score}}</view>
+  </view>
+</view> -->
+<!-- 冻结金额 -->
+<!-- <view class='box'>
+  <view class='clearfix bb'>
+    <view class='fl'>冻结金额</view>
+    <image class='fl' src='../images/icon_problem.png'></image>
+    <view class='fl'>{{walletArray.freeze_remain}}</view>
+  </view>
+</view>
+<view class='frozen mb20'>
+  <view class='clearfix other'>
+    <view class='fl' wx:for="{{moneyArray}}">
+      <text>{{item.text}}</text>
+      <text>{{item.total}}</text>
+    </view>
+  </view>
+</view> -->
+<!-- 冻结积分 -->
+<view class='box'>
+  <view class='clearfix bb'>
+    <view class='fl'>冻结积分</view>
+    <image class='fl' src='../images/icon_problem.png' catchtap='problem'></image>
+    <view class='fl'>{{walletArray.freeze_score}}</view>
+  </view>
+</view>
+<view class='frozen mb20' wx:if='{{noReadValue}}'>
+  <view class='clearfix other'>
+    <view class='fl' wx:for="{{integralArray}}">
+      <text>{{item.text}}</text>
+      <text>{{item.total}}</text>
+    </view>
+  </view>
+</view>
+<!-- 流水明细 -->
+<view class='box mb20' catchtap='flowingWaterLinkFun'>
+  <view class='clearfix'>
+    <view class='fl'>流水明细</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<!-- 积分商城 -->
+<view class='box mb20' catchtap='valueMarket'>
+  <view class='clearfix'>
+    <view class='fl'>积分商城</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+
+<view class='readMask' wx:if="{{noIdentityAuth}}">
+  <view class='identityAuthBox'>
+    <view class='close' catchtap='closeBtn'>
+      <image src='../images/close.png'></image>
+    </view>
+    <view class='boxTitle'>
+      实名认证
+    </view>
+    <view class='boxText' style='margin-top:50rpx;'>
+      未实名认证
+    </view>
+    <view class='boxText' style='margin-top:20rpx;'>
+      是否立即前往认证
+    </view>
+    <view class='goToAuthPage' catchtap='idenAuth'>
+      立即前往
+    </view>
+  </view>
+</view>
+
+<view class='readMask' wx:if="{{identityAuthFalse}}">
+  <view class='identityAuthBox'>
+    <view class='boxTitle'>
+      实名认证
+    </view>
+    <view class='boxText' style='margin-top:50rpx;'>
+      未实名认证
+      <text class='unPass'>未通过！</text>
+    </view>
+    <view class='boxText' style='margin-top:20rpx;'>
+      是否再次认证
+    </view>
+    <view class='goToAuthPage' catchtap='idenAuth'>
+      立即前往
+    </view>
+    <view class='nextTime' catchtap='valueMarket'>下次认证，先去积分商城</view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+.box{box-sizing: border-box;padding: 0 30rpx;width: 100%;height: 100rpx;background-color: #fff}
+.box:first-child{margin: 20rpx auto}
+.box>view{box-sizing: border-box;padding: 32rpx 0;width: 100%;height: 100%;font-size: 0}
+.box>view>view:nth-child(1){font-size: 34rpx;line-height: 34rpx;color: #333333}
+.box>view>image:nth-child(2){margin: 0;width: 19rpx;height: 34rpx}
+.btn{border: 0!important;text-align: left;font-size: 34rpx;line-height: 100rpx;height: 100rpx}
+.btn_box{background-color: #fff}
+.btn_box image{position: absolute;top: 33rpx;right: 30rpx;margin: 0;width: 19rpx;height: 34rpx}

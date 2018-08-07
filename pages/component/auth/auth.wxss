@@ -1,0 +1,92 @@
+/* pages/component/auth/auth.wxss */
+
+
+.alertBox {
+  width: 75%;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+.alertTitle {
+  font-weight: 600;
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #F7F5F8;
+  box-sizing: border-box;
+}
+
+.btnBox {
+  border-top: 1rpx solid #F7F5F8;
+  box-sizing: border-box;
+}
+
+.denyBtn {
+  width: 50%;
+  border-right: 1rpx solid #F7F5F8;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.commitBtn {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  padding: 20rpx 0;
+  position: relative;
+  color: #339C3E;
+  box-sizing: border-box;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+  padding: 0 0;
+  margin: 0 0;
+  height: 100%;
+  opacity:0;
+  position: absolute;
+  top: 10rpx;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+
+.logo {
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.contentTitle {
+  font-size: 30rpx;
+  font-weight: 600;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #F7F5F8;
+  box-sizing: border-box;
+}
+
+.contentDetail {
+  color: #666;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+  padding-bottom: 60rpx;
+  box-sizing: border-box;
+}
+
+.logoImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+}

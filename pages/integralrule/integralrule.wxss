@@ -1,0 +1,5 @@
+.other{box-sizing: border-box;padding: 40rpx 30rpx 0;width: 100%;background-color: #fff;}
+.other:last-child{padding-bottom: 35rpx}
+.other>view{font-size: 28rpx;color: #2e2e2e}
+.other>view:first-child{margin-bottom: 10rpx;color: #2772ff}
+ .box{min-height: 100vh;background-color: #fff} 

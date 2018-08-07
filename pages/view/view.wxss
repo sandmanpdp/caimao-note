@@ -1,0 +1,92 @@
+page {
+  line-height: 0;
+}
+
+.section {
+  padding: 0 30rpx 30rpx;
+  background-color: #fff;
+}
+
+.section .box {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+  line-height: 36rpx;
+}
+
+.section .box:first-child {
+}
+
+.section .box:last-child {
+  padding-bottom: 20rpx;
+  border: 0;
+}
+
+.section .box .title {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 600;
+  line-height: 38rpx;
+}
+
+.section .box .text {
+  margin: 30rpx 0;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.section .box .info {
+  height: 49rpx;
+}
+
+.section .box .info .headimg {
+  margin: 0 20rpx 0 0;
+  width: 49rpx;
+  height: 49rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.section .box .info .name {
+  display: inline-block;
+  font-size: 26rpx;
+  color: #808080;
+}
+
+.section .box .info .data .icon {
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+
+.section .box .info .data .number {
+  font-size: 24rpx;
+  color: #808080;
+}
+
+.section .box .info .data .number:nth-child(2) {
+  margin-right: 49rpx;
+}
+
+.sortPicker {
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #666;
+}
+
+.sortPicker view {
+  font-size: 30rpx;
+}
+
+.icon_bottom_arrow {
+  position: relative;
+  margin-left: 10rpx;
+  top: -2rpx;
+  width: 34rpx;
+  height: 19rpx;
+}
+.selecteBox {
+  background: #fff;
+  text-align: center;
+  border-bottom:1rpx solid #eee;
+}

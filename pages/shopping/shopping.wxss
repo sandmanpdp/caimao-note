@@ -1,0 +1,6 @@
+.list{padding: 30rpx}
+.box{box-sizing: border-box;float: left;margin: 0 30rpx 30rpx 0;padding-top: 54rpx;width: 330rpx;height: 380rpx;background-color: #fff;font-size: 0}
+.box:nth-child(even){margin: 0}
+.box image:nth-child(1){margin-bottom: 26rpx;width: 330rpx;height: 201rpx}
+.box view:nth-child(2){margin-bottom: 14rpx;padding: 0 20rpx;font-size: 26rpx;color: #333333;text-align: center;line-height: 26rpx}
+.box view:nth-child(3){font-size: 26rpx;color: #fc7946;text-align: center;line-height: 26rpx}

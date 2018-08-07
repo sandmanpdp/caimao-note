@@ -1,0 +1,152 @@
+<!-- 头部 -->
+<view class='head clearfix'>
+  <picker bindchange="bindChange" range='{{optionOne}}' range-key='text'>
+    <view class='picker'> 
+      <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+      {{optionText}}
+      <view class='spot' wx:if="{{otherNew>0 && optionText == '所有' ?true:false}}">{{otherNew}}</view>
+    </view>
+  </picker>
+  <!-- 选项一 -->
+  <!-- <view class='fl head_condition_noe clearfix' catch:tap='defaultOptFun' id='headOne'> -->
+    <!-- 默认选项 -->
+    <!-- <view class='fl head_condition_option'>{{optionText}}</view> -->
+    <!-- 向下箭头 -->
+    <!-- <image class='fl icon_bottom_arrow' src='../images/icon_bottom_arrow.png'></image>
+  </view> -->
+  <!-- 选项列表 -->
+  <!-- <view class='head_list' wx:if="{{mask}}"> -->
+    <!-- 向上三角形 -->
+    <!-- <view class="head_icon_trigon {{opt ? 'head_icon_trigon_one' : 'head_icon_trigon_two'}}"></view> -->
+    <!-- 列表渲染 -->
+    <!-- <view wx:for="{{opt ? optionOne : optionTwo}}" class="head_list_box clearfix {{item.state ? 'bc_gray' : 'bc_none'}}" catch:tap='getNoteListNewsFun' data-index="{{index}}">
+      <view class='fl head_list_box_option'>{{item.text}}</view>
+      <icon hidden="{{item.state ? false : true}}" class='fl success_no_circle' type='success_no_circle' size='18' color='#b9b9b9'></icon>
+    </view>
+  </view> -->
+</view>
+<!-- 导航 -->
+<!-- <view class='nav clearfix'>
+  <view id='0' class="fl {{navIndex==0?'co3f86ff':''}}" catch:tap='setNavIndexFun'>笔记<view class='spot' wx:if="{{false}}"></view>
+</view>
+  <view id='1' class="fl {{navIndex==1?'co3f86ff':''}}" catch:tap='setNavIndexFun'>观点
+    <view class='spot' wx:if="{{false}}"></view>
+  </view>
+  <view id='2' class="fl {{navIndex==2?'co3f86ff':''}}" catch:tap='setNavIndexFun'>其他<view class='spot' wx:if="{{otherNew>0?true:false}}">{{otherNew}}</view></view>
+</view> -->
+<!-- 列表 -->
+<!-- 笔记 -->
+<view wx:if="{{navIndex==0?true:false}}">
+  <view class='box clearfix'>
+    <image class='fl' src='../images/ta.jpg'></image>
+    <view class='fr'>
+      <view class='one clearfix'>
+        <view class='fl'>炒股书生518</view>
+        <view class='fr icon' id='m0' catch:tap='setMaskFun'>
+          <icon></icon>
+          <icon></icon>
+          <icon></icon>
+        </view>
+      </view>
+      <view class='two'>1小时前</view>
+      <view class='three clearfix'>
+        <view class='fl'>
+          <view>002***</view>
+          <view>#节能环保</view>
+        </view>
+        <view class='fl'>
+          <view>3日10%</view>
+          <view>目标涨幅</view>
+        </view>
+        <view class='fl'>
+          <view>￥30</view>
+          <view>笔记价格</view>
+        </view>
+      </view>
+      <view class='four clearfix'>
+        <view class='fl'>
+          <image src='../images/icon_news_read.png'></image>
+          <text>125</text>
+        </view>
+        <view class='fl'>
+          <image src='../images/icon_news_alms.png'></image>
+          <text>105</text>
+        </view>
+        <view class='fl'>
+          <image src='../images/icon_news_share.png'></image>
+          <text>15</text>
+        </view>
+      </view>
+    </view>
+    <view class='news_mask' wx:if="{{maskArray[0]}}">
+      <view catch:tap='setCancelFollow'>取消关注</view>
+      <view catch:tap='setNewsTop'>消息置顶</view>
+      <view catch:tap='setNoInterest'>不感兴趣</view>
+      <view catch:tap='setShareFriend'>分享朋友圈</view>
+    </view>
+  </view>
+  <!-- 下拉提示 -->
+  <view class='drop'>下拉刷新   加载更多内容</view>
+</view>
+<!-- 观点 -->
+<view wx:if="{{navIndex==1?true:false}}">
+  <view class='viewpoint'>
+    <view class='head clearfix'>
+      <image class='fl' src='../images/ta.jpg'></image>
+      <view class='fl'>
+        <view>股友8847</view>
+        <view>2小时前</view>
+      </view>
+      <view class='fr icon' id='m0' catch:tap='setMaskFun'>
+          <icon></icon>
+          <icon></icon>
+          <icon></icon>
+      </view>
+    </view>
+    <view class='title tw2'>咬定牛股不放松，价值原在电影中！跟进[芳华]衍生股</view>
+    <view class='text tw4'>【机会瞄准镜】贺岁片集体来袭，影视板块热度提升。昨天我在“《芳华》引爆贺岁档”文中写到，年末传媒预期和个股表现。今天娱乐传媒板块应大市而动!个股走势...</view>
+    <view class='clearfix info'>
+      <view class='fl'>
+        <image src='../images/icon_news_read.png'></image>
+        <text>1445</text>
+      </view>
+      <view class='fl'>
+        <image src='../images/icon_news_alms.png'></image>
+        <text>1445</text>
+      </view>
+      <view class='fl'>
+        <image src='../images/icon_laud.png'></image>
+        <text>1445</text>
+      </view>
+    </view>
+    <view class='news_mask' style='bottom:100rpx' wx:if="{{maskArray[0]}}">
+      <view catch:tap='setCancelFollow'>取消关注</view>
+      <view catch:tap='setNewsTop'>消息置顶</view>
+      <view catch:tap='setNoInterest'>不感兴趣</view>
+      <view catch:tap='setShareFriend'>分享朋友圈</view>
+    </view>
+  </view>
+  <!-- 下拉提示 -->
+  <view class='drop'>下拉刷新   加载更多内容</view>
+</view>
+<!-- 其他 -->
+<view wx:if="{{navIndex==2?true:false}}">
+  <view class='other' wx:for="{{otherArray}}" id='{{item.url}}' data-type="{{item.type}}" catchtap='linkFun'>
+    <view class='time'>{{item.created_at}}</view>
+    <!-- <view class='talk clearfix'>
+      <image class='fl' src='../images/robot.png'></image>
+      <view class='fr'>神奇牛股关注了您<image src='../images/icon_talk.png'></image></view>
+    </view> -->
+    <view class="ordinary {{item.state!=1?'bkfafafa':''}}">
+      <view>
+        <view class="tw1 {{item.state!=1?'cob9b9b9':''}}">{{item.title}}</view>
+        <view>{{item.content}}</view>
+      </view>
+      <view>查看详情</view>
+    </view>
+  </view> 
+</view>
+<!-- 暂无提示 -->
+<view wx:if="{{notesNull}}" class='drop'>暂无更多消息</view>
+<!-- 下拉提示 -->
+<view class='drop' wx:if="{{bottomState}}">下拉刷新   加载更多消息</view>

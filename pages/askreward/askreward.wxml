@@ -1,0 +1,59 @@
+<view class='ban'>
+  <!-- 输入框 -->
+  <view class='input'>
+    <input class='' placeholder='提问不得少于10个字' placeholder-class='cob9b9b9'></input>
+    <view>悬赏{{sumValue}}元</view>
+  </view>
+  <!-- 关联股票 -->
+  <view class='shares'>
+    <view class='clearfix'>
+      <text class='fl'>关联股票</text>
+      <input class='fl' placeholder='输入股票名称/代码' placeholder-class='cob9b9b9'></input>
+    </view>
+    <view class='clearfix'>
+      <text class='fl'>指定牛人</text>
+      <input class='fl' placeholder='最多可选3人或不选' placeholder-class='cob9b9b9'></input>
+      <text class='fr'>@</text>
+    </view>
+  </view>
+  <!-- 须知 -->
+  <view id='m1' class='clearfix notice' catch:tap='setMaskIndexFun'>
+    <text class='fl'>提问须知</text>
+    <image class='fr' src='../images/icon_right_arrow.png'></image>
+  </view>
+  <!-- 金额 -->
+  <view class='sum'>
+    <view>选择悬赏金额</view>
+    <view class='clearfix'>
+      <view id='s0' class="fl {{sumIndex==0?'bgfc7946':''}}" catchtap='setSumIndexFun'>10元鸡腿</view>
+      <view id='s1' class="fl {{sumIndex==1?'bgfc7946':''}}" catchtap='setSumIndexFun'>30元便当</view>
+      <view id='s2' class="fl {{sumIndex==2?'bgfc7946':''}}" catchtap='setSumIndexFun'>50元全家桶</view>
+      <view id='m2' class="fl {{sumIndex==3?'bgfc7946':''}}" catchtap='setMaskIndexFun'>{{sumOther}}</view>
+    </view>
+    <view class='depict'>赏金越高，越能吸引高手回答哦</view>
+  </view>
+  <!-- 发布 -->
+  <view class='reading'>发布</view>
+  <!-- 提问须知 -->
+  <view class='mask' wx:if="{{maskIndex==1?true:false}}">
+    <view class='one'>
+      <view>提问须知</view>
+      <view>
+        <view>1.提问后答主72小时未回答，将按支付路径全额退款。</view>
+        <view>2.您提交的问题可以指定给牛人回答或由平台推送给炒股达人回答。</view>
+        <view>3.每天收益主动提现到您的账户。</view>
+      </view>
+      <view>朕知道了</view>
+      <image id='m0' src='../images/icon_close.png' catch:tap='setMaskIndexFun'></image>
+    </view>
+  </view>
+  <!-- 其他金额 -->
+  <view class='mask' wx:if="{{maskIndex==2?true:false}}">
+    <view class='two'>
+      <view>输入其他金额</view>
+      <input type='number' placeholder='输入10的倍数金额' placeholder-class='cob9b9b9' bindinput='sumOtherDateChange'></input>
+      <view catchtap='setOtherSumFun'>确定</view>
+      <view id='m0' catch:tap='setMaskIndexFun'>取消</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,206 @@
+<!--index.wxml-->
+<!-- 导航 -->
+<!-- <view class='readMask' wx:if="{{authStatus}}">
+  <view class='authBox'> -->
+    <!-- <auth-component></auth-component> -->
+    <!-- <view class="wrapper">
+  <view class='alertBox'>
+    <view class='alertTitle'>
+      登陆授权
+    </view>
+    <view class='content'>
+      <view class='logo'>
+        <image class='logoImg' src='../images/integral_nav4.png'></image>
+      </view>
+      <view class='contentTitle'>
+        股先森申请获得以下权限:
+      </view>
+      <view class='contentDetail'>
+        获取你的公开信息（昵称、头像等）
+        如果拒绝，则功能不能正常使用和页面展示不全。
+      </view>
+    </view>
+    <view class='btnBox'>
+      <view class='denyBtn' catchtap='denyAuth'>
+        拒绝
+        <button class='btn'></button>
+      </view>
+      <view class='commitBtn'>
+        接受
+        <button class='btn' open-type='getUserInfo' bindgetuserinfo="onGotUserInfo"></button>
+      </view>
+    </view>
+  </view>
+</view>
+
+  </view>
+</view> -->
+
+<view class='nav'>
+
+  <!-- 热门 -->
+  <navigator url="/pages/notelist/notelist?type=hot" open-type='navigate' hover-class="navigator-hover">
+    <view class='nav_icon nav_hot'>
+      <image src='../images/icon_hot.png'></image>
+    </view>
+  </navigator>
+  <!-- 免费 -->
+  <navigator url="/pages/notelist/notelist?type=0" open-type='navigate' hover-class="navigator-hover">
+    <view class='nav_icon nav_free'>
+      <image src='../images/icon_free.png'></image>
+    </view>
+  </navigator>
+  <!-- 日均高 -->
+  <navigator url="/pages/notelist/notelist?type=max" open-type='navigate' hover-class="navigator-hover">
+    <view class='nav_icon nav_goal'>
+      <image src='../images/icon_goal.png'></image>
+    </view>
+  </navigator>
+  <!-- 目标高 -->
+  <navigator url="/pages/notelist/notelist?type=new" open-type='navigate' hover-class="navigator-hover">
+    <view class='nav_icon nav_day'>
+      <image src='../images/icon_day.png'></image>
+    </view>
+  </navigator>
+</view>
+
+<!-- 头部 -->
+<view class='head'>
+  <!-- <icon class='head_icon'></icon> -->
+  <!-- 排行榜 -->
+  <!-- <navigator url="/pages/optional/optional" open-type='navigate' hover-class="navigator-hover"> -->
+
+  <view class='head_left'>
+    <navigator url="/pages/masterlist/masterlist" open-type='navigate'>
+      <image class='head_left_icon' src='../images/icon_rankingList.png'></image>
+      <view class='head_left_title'>排行榜</view>
+    </navigator>
+  </view>
+  <!-- </navigator> -->
+  <!-- 问股诊股 -->
+  <!-- <navigator url="/pages/askStock/askStock" open-type='navigate' hover-class="navigator-hover">  -->
+  <view class='head_right' catchtap='unopenedFun'>
+    <!-- <view class='head_right'> -->
+    <image class='head_left_icon' src='../images/icon_ask.png'></image>
+    <view class='head_left_title'>问股诊股</view>
+  </view>
+  <!-- </navigator>  -->
+</view>
+
+<!-- 热门笔记 -->
+<view class='hot'>
+  <!-- 标题 -->
+  <view class='hot_title'>
+    <icon class='hot_title_icon'></icon>
+    <text class='hot_title_text'>热门笔记</text>
+    <!-- 更多 -->
+    <navigator url="/pages/notelist/notelist?type=hot" open-type='navigate' hover-class="navigator-hover" class='fr'>
+      <view class='hot_title_more'>
+        <text>更多</text>
+        <image class='icon_right_arrow' src='../images/icon_right_arrow.png'></image>
+      </view>
+    </navigator>
+  </view>
+  <swiper autoplay='true' interval='4000' duration='800' circular='true' previous-margin='35rpx' next-margin='35rpx' class='hot_scroll' scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}">
+    <!-- 列表渲染 -->
+    <swiper-item class='scroll-view-item' wx:for="{{hot}}">
+      <!-- 内容 -->
+      <view class='hot_section'>
+        <!-- 涂鸦 one -->
+        <!-- <view class='hot_section_daub_one'></view> -->
+        <!-- 涂鸦 two -->
+        <!-- <view class='hot_section_daub_two'></view> -->
+        <!-- 内容 -->
+        <view class='hot_section_box' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'>
+          <!-- 上半部分 -->
+          <view class='hot_section_box_modular_one clearfix'>
+            <view class='hot_section_box_modular_one_left'>
+              <view class='inde_swiper_shareInfo_box'>
+                <view class='index_swiper_shareName'>{{item.share}}</view>
+                <view class='index_swiper_shareCode'>{{item.code}}</view>
+              </view>
+              <view class='hot_section_box_modular_one_left_depict'>
+                <view class='hot_section_box_modular_one_left_depict_one'>{{item.day}}日{{item.rise}}%</view>
+                <view class='hot_section_box_modular_one_left_depict_two'>目标涨幅</view>
+              </view>
+            </view>
+            <view class='hot_section_box_modular_one_right'>
+              <view class='hot_section_box_modular_one_right_one' style='position:relative'>
+                <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if="{{item.price !=0 }}"></image>
+                <text class="{{item.price==0?'freePriceText':'needPriceText'}}">{{item.price == 0?'免费':item.price}}</text>
+              </view>
+              <view class='hot_section_box_modular_one_right_two'>笔记价格</view>
+            </view>
+          </view>
+          <!-- 下半部分  -->
+          <view class='hot_section_box_modular_two clearfix'>
+            <image class='hot_section_box_modular_two_userHead' src='{{item.avatar}}' lazy-load='true'></image>
+            <view class='hot_section_box_modular_two_userName tw1'>{{item.name}}</view>
+            <!-- <view class='hot_section_box_modular_two_depict tw1'>累计涨幅{{item.sum_increase}}%</view> -->
+            <view class='hot_section_box_modular_two_btn' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'>阅 读</view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 热门观点 -->
+<view class='view'>
+  <!-- 标题 -->
+  <view class='hot_title' style='height:80rpx'>
+    <icon class='hot_title_icon'></icon>
+    <text class='hot_title_text'>热门观点</text>
+    <!-- 更多 -->
+    <navigator url="/pages/view/view" open-type='navigate' hover-class="navigator-hover" class='fr'>
+      <view class='hot_title_more'>
+        <text>更多</text>
+        <image class='icon_right_arrow' src='../images/icon_right_arrow.png'></image>
+      </view>
+    </navigator>
+  </view>
+  <!-- 内容 -->
+  <view class='section'>
+    <view class='box' wx:for="{{view}}" id='{{item.id}}' catchtap='viewReadFun'>
+      <view class='title'>{{item.title}}</view>
+      <view class='text tw3'>{{item.price > 0 ? '精彩内容，付费即可阅读':item.intro}}</view>
+      <view class='info clearfix'>
+        <view class='author fl'>
+          <image class='headimg' src='{{item.avatar}}'></image>
+          <view class='name'>{{item.nickname}}</view>
+        </view>
+        <view class='data fr'>
+          <image src='../images/icon_look.png' class='icon'></image>
+          <text class='number'>{{item.look}}</text>
+          <image src='../images/icon_view.png' class='icon'></image>
+          <text class='number'>{{item.comment}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 高手推荐 -->
+<view class='recommend'>
+  <!-- 标题 -->
+  <view class='hot_title'>
+    <icon class='hot_title_icon'></icon>
+    <text class='hot_title_text'>达人推荐</text>
+    <!-- 更多 -->
+    <navigator url="/pages/masterlist/masterlist" open-type='navigate' hover-class="navigator-hover" class='fr'>
+      <view class='hot_title_more'>
+        <text>更多</text>
+        <image class='icon_right_arrow' src='../images/icon_right_arrow.png'></image>
+      </view>
+    </navigator>
+  </view>
+  <!-- 内容 -->
+  <view class='recommend_scroll clearfix'>
+    <view class='recommend_scroll_box' wx:for="{{recommend}}" catch:tap='recommendJumpFun' id='{{item.id}}'>
+      <image class='recommend_scroll_box_userHaed' src='{{item.avatar}}'></image>
+      <view class='recommend_scroll_box_userName tw1'>{{item.nickname}}</view>
+      <view class='recommend_scroll_box_depict tw1'>{{item.sum_increase}}%</view>
+      <!-- <view class='btn'>关注</view> -->
+    </view>
+  </view>
+</view>
+<!-- 底部 -->
+<view class='footer' style='height:20rpx;'></view>

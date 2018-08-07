@@ -1,0 +1,65 @@
+<!-- 头部 -->
+<view class='head pr'>
+  <image class='banner' mode='widthFix' src='../images/integral_head.jpg'></image>
+  <view class='box'>
+    <view class='left'>
+      <view>
+        我的积分
+        <image src='../images/integral_depict.png' catchtap='openMaskFun'></image>
+      </view>
+      <view>23654</view>
+      <view>打败了35.12%用户</view>
+    </view>
+    <image class='right' src='../images/integral_right.png'></image>
+  </view>
+</view>
+<!-- 导航 -->
+<view class='nav clearfix'>
+  <view class='fl' catchtap='rechargeFun'>
+    <image src='../images/integral_nav1.png'></image>
+    <view>积分充值</view>
+  </view>
+  <view class='fl' catchtap='parkFun'>
+    <image src='../images/integral_nav2.png'></image>
+    <view>积分乐园</view>
+  </view>
+  <view class='fl' catchtap='shoppingFun'>
+    <image src='../images/integral_nav3.png'></image>
+    <view>积分壕礼</view>
+  </view>
+  <view class='fl' catchtap='addressFun'>
+    <image src='../images/integral_nav4.png'></image>
+    <view>收货地址</view>
+  </view>
+</view>
+<!-- 主体 -->
+<view class='section'>
+  <view class='clearfix title'>
+    <view class='fl'></view>
+    <view class='fl'>买产品 送积分</view>
+  </view>
+  <!-- 循环体 -->
+  <view class='clearfix pr box'>
+    <view class='fl clearfix'>
+      <image class='fl icon' src='../images/integral_list1.png'></image>
+      <view class='fl depict'>
+        <view>早中晚评</view>
+        <view>一年期会员</view>
+        <view>送3000积分</view>
+      </view>
+    </view>
+    <view class='fr'>2980元</view>
+    <view></view>
+    <view></view>
+  </view>
+</view>
+<!-- 积分规则 -->
+<view class="mask" wx:if="{{maskState}}">
+  <view>
+    <view>说明</view>
+    <view>
+      <view>人民币与积分的兑换比例为：1：2，一元等于2积分，充值的积分不可提现可直接用于查看购买笔记，VIP产品，打赏作者，兑换礼品，玩游戏。</view>
+    </view>
+    <view id='m0' catch:tap='endMaskFun'>朕知道了</view>
+  </view>
+</view>

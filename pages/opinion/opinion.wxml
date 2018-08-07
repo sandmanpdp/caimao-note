@@ -1,0 +1,5 @@
+<view class='box'>
+  <view>留言反馈</view>
+  <textarea  placeholder='请输入问题，并留下联系方式，我们会尽快回复您' maxlength='200'></textarea >
+</view>
+<view class='btn'>提交</view>

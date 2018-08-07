@@ -1,0 +1,10 @@
+/* 导航 */
+.nav{padding: 0 30rpx;height: 100rpx;font-size: 30rpx;color: #666666;line-height: 100rpx}
+/* 列表 */
+.list{padding: 0 30rpx;background-color: #fff}
+.box{padding: 24rpx 0;min-height: 70rpx;border-bottom: 1px solid #eee}
+.box:last-child{border: 0}
+.box>view:nth-child(1){font-size: 30rpx;line-height: 30rpx}
+.box>view:nth-child(1)>view:nth-child(1){color: #000000;width: 400rpx;line-height:42rpx;}
+.box>view:nth-child(1)>view:nth-child(2){color: #fc7946}
+.box>view:nth-child(2){margin-top: 20rpx;font-size: 24rpx;line-height: 24rpx;color: #999999}

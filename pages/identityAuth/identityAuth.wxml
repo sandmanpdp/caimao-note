@@ -1,0 +1,82 @@
+<!--pages/identityAuth/identityAuth.wxml-->
+<view class='box clearfix'>
+  <view class='boxSlice clearfix'>
+    <view class='fl box_title'>真实姓名</view>
+    <view class='fl box_value'>
+      <input class='box_input' type='text' placeholder='输入开户姓名' placeholder-class='box_input_placeholder' bindinput="bindUsernameInput" value='{{username}}'></input>
+    </view>
+  </view>
+</view>
+<!-- <view class='box clearfix'>
+  <view class='boxSlice clearfix'>
+    <view class='fl box_title'>手机号码</view>
+    <view class='fl box_value'>
+      <input class='box_input' type='text' placeholder='输入手机号码' placeholder-class='box_input_placeholder' bindinput="bindTitleInput" value='{{titleValue}}'></input>
+    </view>
+  </view>
+</view>
+<view class='box clearfix'>
+  <view class='boxSlice clearfix'>
+    <view class='fl box_title'>验证码</view>
+    <view class='fl box_value'>
+      <input class='box_input' style='width:260rpx;' type='text' placeholder='请填写验证码' placeholder-class='box_input_placeholder' bindinput="bindTitleInput" value='{{titleValue}}'></input>
+    </view>
+    <view class='fr getValidateCode'>
+      获取验证码
+    </view>
+  </view>
+</view> -->
+
+<view class='box clearfix'>
+  <view class='boxSlice clearfix'>
+    <view class='fl box_title'>身份证</view>
+  <view class='fl box_value'>
+    <input class='box_input' type='text' placeholder='输入身份证号码' placeholder-class='box_input_placeholder' bindinput="bindIdInput" value='{{idCard}}' type='idcard' bindblur='validateIdcard'></input>
+  </view>
+  </view>
+</view>
+
+<view class='box clearfix'>
+  <view class='boxSlice clearfix'>
+    <view class='fl box_title'>执业编号</view>
+    <view class='fl box_value'>
+      <input class='box_input' type='text' placeholder='请填写执业编号' placeholder-class='box_input_placeholder' bindinput="bindCodeInput" value='{{certCode}}'></input>
+    </view>
+  </view>
+</view>
+<view class='box clearfix'>
+  <view class='boxSlice clearfix'>
+    <view class='fl box_title'>银行卡号</view>
+    <view class='fl box_value'>
+      <input class='box_input' type='text' placeholder='请填写储蓄银行卡号' placeholder-class='box_input_placeholder' bindinput="bindBankNumInput" bindblur='getBankName' value='{{bankNum}}'></input>
+    </view>
+  </view>
+</view>
+<view class='box clearfix'>
+  <view class='boxSlice clearfix'>
+    <view class='fl box_title'>开户银行</view>
+    <view class='fl box_value'>
+      <input class='box_input' type='text' placeholder='请填写开户银行' placeholder-class='box_input_placeholder' bindinput="bindBankNameInput" value='{{bankName}}'></input>
+    </view>
+  </view>
+</view>
+
+<!-- <view class='box clearfix'>
+  <view class='boxSlice clearfix'>
+    <view class='fl box_title'>开户银行</view>
+    <view class='fl box_value' style='width:440rpx;'>
+      <picker class='box_picker_date' mode="selector" bindchange="BankChange" range="{{bankArray}}">
+        <view class="picker prict">{{bankArray[bankArrayIndex]}}</view>
+        <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+      </picker>
+    </view>
+  </view>
+</view> -->
+<view class='message'>
+  {{message}}
+</view>
+<view class='btnBox'>
+  <view class='commitBtn' catchtap='submitFunc'>
+    提交
+  </view>
+</view>

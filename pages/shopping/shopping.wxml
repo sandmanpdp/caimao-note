@@ -1,0 +1,12 @@
+<view class='list clearfix'>
+  <view class='box'>
+    <image src='../images/2.jpg'></image>
+    <view class='tw1'>iphone x  64G版本本本本本本</view>
+    <view>99999积分</view>
+  </view>
+  <view class='box'>
+    <image src='../images/2.jpg'></image>
+    <view class='tw1'>iphone x  64G版本</view>
+    <view>99999积分</view>
+  </view>
+</view>

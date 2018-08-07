@@ -1,0 +1,65 @@
+<!-- 渲染列表 -->
+<view>
+  <!-- 选项 默认 达标率 累计收益 -->
+  <view class='section selecteBox'>
+    <picker bindchange='sortFun' value='{{index}}' range='{{sortArray}}' class='sortPicker'>
+      <view>
+        {{sortArray[sortBy]}}
+        <image src='../images/icon_bottom_arrow_gray.png' class='icon_bottom_arrow'></image>
+      </view>
+    </picker> 
+  </view>
+  <!-- 标题 -->
+  <!-- <view class='title'>热推名人</view> -->
+  <!-- 关注列表 -->
+  <view class='list_box' wx:for="{{masterArray}}" id="{{item.id}}" catchtap='linkFun'>
+    <!-- 上半部分 -->
+    <view class='list_box_top clearfix'>
+      <!-- 作者头像 -->
+      <view class='fl list_box_top_authorHead'>
+        <image class='list_box_top_authorHead_img' src='{{item.avatar}}'></image>
+        <image wx:if="{{item.rids!=4?true:false}}" class='list_box_top_authorHead_vip' src='../images/icon_userHead_vip.png'></image>
+      </view>
+      <!-- 作者姓名 -->
+      <view class='fl list_box_top_authorInfo'>
+        <view class='list_box_top_authorInfo_name'>{{item.nickname}}</view>
+        <view class='list_box_top_authorInfo_depict tw1'>粉丝数：{{item.fans}}</view>
+      </view>
+      <!-- 取消 -->
+      <view class='fr fun'>
+        <view wx:if="{{item.is_concern==0}}" id="{{item.id}}" catchtap='followFun'>
+          <image src='../images/icon_add.png'></image>
+          <text class='co2772ff'>关注</text>
+        </view>
+        <view wx:if="{{item.is_concern==1}}">
+          <text>已关注</text>
+        </view>
+         <view wx:if="{{item.is_concern==2}}">
+          <text>互相关注</text>
+        </view>
+      </view>
+    </view>
+    <!-- 下半部分 -->
+    <view class='list_box_bottom clearfix'>
+      <view class='fl list_box_bottom_box tc'>
+        <view class='list_box_bottom_box_title'>{{item.note_num}}</view>
+        <view class='list_box_bottom_box_depict'>笔记数量</view>
+      </view>
+      <view class='fl list_box_bottom_box tc'>
+        <view class='list_box_bottom_box_title'>{{item.sum_reach*10}}%</view>
+        <view class='list_box_bottom_box_depict'>近10篇达标</view>
+      </view>
+      <view class='fl list_box_bottom_box tc'>
+        <view class="list_box_bottom_box_title">{{item.sum_increase}}%</view>
+        <view class='list_box_bottom_box_depict'>累计收益</view>
+      </view>
+    </view>
+  </view>
+  <!-- 更多 -->
+  <view wx:if="{{false}}" class='more'>
+    <view class='fl'>查看更多新晋名单</view>
+    <image class='fr' src='../images/icon_right_arrow.png'></image>
+  </view>
+  <!-- 只显示前15位达人 -->
+  <view class='drop'>只显示前15位达人</view>
+</view>

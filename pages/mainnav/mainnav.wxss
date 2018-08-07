@@ -1,0 +1,13 @@
+/* pages/mainnav/mainnav.wxss */
+/* 主导航 */
+.mainNav{position: fixed;bottom: 0;left: 0;width: 100%;height: 100rpx;border-top: 2rpx solid #dddddd;background-color: #fff;z-index: 999999}
+.mainNav_round{margin: -17rpx auto 0;width: 120rpx;height: 120rpx;border: 2rpx solid #dddddd;border-radius: 50%;background-color: #fff}
+.mainNav_mask{margin: -105rpx auto 0;width: 130rpx;height: 120rpx;background-color: #fff}
+.mainNav_fun{box-sizing: border-box;position: absolute;top:0;left:0;padding: 15rpx 60rpx 0;width: 100%;height: 100%}
+.mainNav_fun image{width: 100%;height: 100%}
+.mainNav_fun_icon{width: 38rpx;height: 71rpx}
+.mainNav_fun_home{float: left;}
+.mainNav_fun_note{float: left;margin: 0 0 0 97rpx} 
+.mainNav_fun_write{position: absolute;top:0;left: 50%;margin-left: -44rpx;width: 88rpx;height: 88rpx} 
+.mainNav_fun_follow{float: right;margin: 0 97rpx 0 0 } 
+.mainNav_fun_my{float: right}

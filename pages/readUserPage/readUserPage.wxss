@@ -1,0 +1,21 @@
+/* pages/readUserPage/readUserPage.wxss */
+
+.portrait {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+  margin: 0 18rpx 30rpx 0;
+  border: 2rpx solid #fff;
+  box-sizing: border-box;
+}
+
+.portraitBox image:nth-child(7n+7) {
+  margin-right: 0;
+}
+
+.portraitBox {
+  margin: 50rpx 30rpx;
+  margin-bottom: 0;
+}
+
+

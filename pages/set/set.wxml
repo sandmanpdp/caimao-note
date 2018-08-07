@@ -1,0 +1,25 @@
+<view class='box' catchtap='oneFun'>
+  <view class='clearfix'>
+    <view class='fl'>绑定手机</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<view class='box' catchtap='twoFun'>
+  <view class='clearfix'>
+    <view class='fl'>推送设置</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<view class='box' catchtap='authBtn'>
+  <view class='clearfix'>
+    <view class='fl'>实名认证</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>
+<!-- 收货地址 by pdp -->
+<view class='box' catchtap='addAddress'>
+  <view class='clearfix'>
+    <view class='fl'>收货地址</view>
+    <image class='fr arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</view>

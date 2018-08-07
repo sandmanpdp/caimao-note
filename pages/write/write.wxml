@@ -1,0 +1,296 @@
+<view class="{{maskState?'ban':''}}">
+  <!-- 导航 -->
+  <view class='nav claerfix'>
+    <view class="fl nav_box {{nav ? 'co_write' : ''}}" catch:tap='navOptFun' id='0'>写笔记</view>
+    <view class="fl nav_box {{nav ? '' : 'co_write'}}" catch:tap='navOptFun' id='1'>写观点</view>
+  </view>
+  <!-- 推票 -->
+  <view wx:if="{{nav}}">
+    <!-- 标题 -->
+    <view class='box clearfix'>
+      <view class='fl box_title'>标题</view>
+      <view class='fl box_value'>
+        <input class='box_input' type='text' placeholder='请输入2-16个字符' placeholder-class='box_input_placeholder' maxlength='16' bindinput="bindTitleInput" value='{{titleValue}}'></input>
+      </view>
+    </view>
+    <!-- 逻辑 -->
+    <!-- <view class='box box_textarea clearfix'> -->
+    <view class='box clearfix viewHeightAuto'>
+      <view class='fl box_logicTitle'>逻辑</view>
+      <view class='fl box_value'>
+       <textarea class='logic_textarea' style='width:513rpx' auto-height="true" placeholder='请输入不少于10个字的推荐理由' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindLogicInput" value='{{logicValue}}'></textarea> 
+        <!-- <input class='box_input' placeholder='请输入不少于10个字的推荐理由' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindLogicInput" value='{{logicValue}}'></input> -->
+      </view>
+    </view>
+    <!-- 股票代码 -->
+    <view class='box clearfix pr'>
+      <view class='fl box_title'>股票</view>
+      <view class='fl box_value'>
+        <input class='box_input' placeholder='请输入股票代码/名称' placeholder-class='box_input_placeholder' maxlength='30' bindinput="bindKeyInput" value='{{shareValue}}' bindblur="shareMaskEnd" bindconfirm='confirmShare'></input>
+      </view>
+      <!-- 修改 matchingState 状态 -->
+      <view wx:if="{{matchingState}}" class='codeMask codeMaskTop'>
+        <view wx:for="{{showStockCodeArray}}" id="{{item.code}}" data-text='{{item.name}}' catchtap='setCodeFun'>{{item.name}}</view>
+      </view>
+    </view>
+    <!-- 时间  -->
+    <view class='box clearfix pr'>
+      <view class='fl box_title'>时间</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector"  bindchange="timeChange" range="{{timeArray}}">
+          <view class="picker prict">{{timeArray[timeIndex]}}</view>
+        </picker>
+      </view> 
+      <view class='percent'>个交易日</view>  
+    </view>
+    <!-- 上涨 -->
+    <view class='box clearfix pr'>
+      <view class='fl box_title'>上涨</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector"  bindchange="riseChange" range="{{riseArray}}">
+          <view class="picker prict">{{riseArray[riseIndex]}}</view>
+        </picker>
+      </view> 
+      <view class='percent'>%</view> 
+    </view>
+    <!-- 止损 -->
+    <view class='box clearfix pr'>
+      <view class='fl box_title'>止损</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector"  bindchange="stopChange" range="{{stopArray}}">
+          <view class="picker prict">{{stopArray[stopIndex]}}</view>
+        </picker>
+      </view>
+      <view class='percent'>%</view>
+    </view>
+    <!-- 提示 -->
+    <view class='box'>实时计算，24小时后判断是否达标</view>
+    <!-- 标签 -->
+    <view class='box clearfix pr'>
+      <view class='fl box_title label_title'>标签：</view>
+      <view class='fl label_value claerfix'>
+        <view class="fl label_box {{item.state ? 'co_blue' : ''}}" wx:for="{{label}}" catch:tap='labelOptFun' id='{{item.id}}'>
+          {{item.title}}
+          <view class="label_box_icon {{item.state ? 'bc_blue' : ''}}">
+            <icon wx:if="{{item.state}}" class="label_box_icon_circle" type='success_no_circle' color='#fff' size='10'></icon>
+          </view>
+        </view>
+      </view> 
+      <view wx:if="{{tableState}}" class='codeMask codeMaskBottom'>
+        <view wx:for="{{showTableArray}}" id="{{item}}" catchtap='setTableFun'>{{item}}</view>
+      </view>
+    </view>
+     <!-- 收费 -->
+    <view class='box clearfix'>
+      <view class='fl box_title'>收费</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector"  bindchange="noteChargeChange" range="{{chargeArray}}">
+          <view class="picker prict">{{chargeArray[noteChargeIndex]}}</view>
+          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+        </picker>
+      </view>
+    </view>
+    <!-- 标价 -->
+    <view class='box clearfix' wx:if="{{noteChargeIndex!=0}}">
+      <view class='fl box_title'>标价</view>
+      <view class='fl box_value'>
+        <picker disabled="{{noteChargeIndex==0?true:false}}" class="box_picker_date" mode="selector"  bindchange="bindPriceChange" range="{{priceArray}}">
+          <view class="picker prict {{noteChargeIndex==0?'c0b9b9b9':''}}">{{priceArray[priceIndex]}}</view>
+          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+        </picker>
+      </view>
+    </view>
+    
+    <!-- 押金 -->
+    <!-- <view class='box clearfix'>
+      <view class='fl box_title'>押金</view>
+      <view class='fl box_value'>
+        <input class='box_input c0b9b9b9' value='{{priceArray[priceIndex]}}' disabled="false"></input>
+      </view>
+    </view> -->
+    <!-- 提示 -->
+    <!-- <view wx:if="{{false}}" class='box clearfix'>您需准备等额红包，作为押金，项目不达标时分给读者</view> -->
+    <!-- 限时  -->
+    <view class='box clearfix' wx:if="{{noteChargeIndex!=0}}">
+      <view class='fl box_title'>限时</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector"  bindchange="bindEndDateChange" range="{{endDateArray}}">
+          <view class="picker">
+            {{endDateArray[endDateIndex]}}
+          </view>
+          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+        </picker>
+      </view>  
+    </view>
+    <!-- 人数  -->
+    <view class='box clearfix' wx:if="{{noteChargeIndex!=0}}">
+      <view class='fl box_title'>人数</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector"  bindchange="bindPeopleChange" range="{{peopleArray}}">
+          <view class="picker">{{peopleArray[peopleIndex]}}
+          </view>
+          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+        </picker>
+      </view>  
+    </view>
+    <!-- 须知 -->
+    <view class='box clearfix' catchtap='setNoteMaskTrueFun'>
+      <view class='fl box_title'>须知</view>
+      <image class='fr box_picker_notice_icon' src='../images/icon_right_arrow.png'></image>  
+    </view>
+    <!-- 阅览发布 -->
+    <view class='reading' catch:tap='trueFun'>阅览</view>
+  </view>
+  <!-- 观点 -->
+  <view wx:if="{{!nav}}" class='viewpoint'>
+    <!-- 标题 -->
+    <view class='box'>
+      <view class='box_value box_viewpoint'>
+        <input class='logic_input' placeholder='请输入标题' placeholder-class='logic_input_placeholder' maxlength='32' bindinput="viewpointTitleInput" value='{{viewpointTitleValue}}'></input>
+      </view>
+    </view>
+    <!-- 简介 -->
+    <!-- <view class='box box_textarea'> -->
+    <!-- <view class='box'>
+      <view class='box_value box_viewpoint'>
+         <textarea class='logic_textarea' auto-height="true" placeholder='请输入介绍' placeholder-class='logic_input_placeholder' maxlength='100' bindinput="bindDepictInput" value='{{viewpointDepictValue}}'></textarea>
+         <input class='logic_input' placeholder='请输入介绍' placeholder-class='logic_input_placeholder' maxlength='100' bindinput="bindDepictInput" value='{{viewpointDepictValue}}'></input> 
+      </view>
+    </view> -->
+    <!-- 内容 -->
+    <!-- <view class='box box_textarea'> -->
+    <view class='textareaBox'>
+      <view class='box_value box_viewpoint'>
+         <textarea class='logic_textarea' auto-height="true" placeholder='请输入内容' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindContentInput" value='{{viewpointContentValue}}'></textarea> 
+        <!-- <input class='logic_input' auto-height="true" placeholder='请输入内容' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindContentInput" value='{{viewpointContentValue}}'></input> -->
+      </view>
+    </view>
+    <!-- 收费 -->
+    <view class='box clearfix'>
+      <view class='fl box_title'>收费</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector"  bindchange="viewChargeChange" range="{{chargeArray}}">
+          <view class="picker prict">{{chargeArray[viewChargeIndex]}}</view>
+          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+        </picker>
+      </view>
+    </view>
+    <!-- 标价 -->
+    <view class='box clearfix'>
+      <view class='fl box_title'>标价</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector"  bindchange="viewPriceChange" range="{{priceArray}}" disabled="{{viewChargeIndex==0?true:false}}">
+          <view class="picker prict {{viewChargeIndex==0?'c0b9b9b9':''}}">{{priceArray[viewPriceIndex]}}</view>
+          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+        </picker>
+      </view>
+    </view>
+    <!-- 关联笔记 -->
+    <view class='box clearfix'>
+      <view class='fl box_title_relatedNote'>关联笔记</view>
+      <view class='fl box_value'>
+        <picker class='box_picker_date' mode="selector" bindchange="relatedNote" range="{{pickerNameArray}}" >
+          <view class="picker">{{pickerNameArray[note_index]}}</view>
+          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+        </picker>
+      </view>
+    </view>
+    <!-- 须知 -->
+    <view class='box clearfix' catchtap='setViewMaskTrueFun'>
+      <view class='fl box_title'>须知</view>
+      <image class='fr box_picker_notice_icon' src='../images/icon_right_arrow.png'></image>  
+    </view>
+    <!-- 阅览发布 -->
+    <view class='reading' catchtap='viewpointReleaseFun'>发布</view>
+  </view>
+
+  <!-- 笔记规则遮罩 -->
+  <view class="mask" wx:if="{{maskNoteState?true:false}}">
+    <view>
+      <view>规则</view>
+      <view>
+        <view>1.牛股笔记是一款交易计划记录工具。作者可写下自己选择的股票、目标涨幅、时间期限、截止等，由系统来验证是否达标。其他人可付费阅读。</view>
+        <view>2.开盘期间发布的笔记实时计算，未开盘期间发布的笔记下次开盘时计算。</view>
+        <view>3.自24小时起，股票盘中达到目标涨幅，笔记达标；盘中达到止损线或到截止时间未达到目标涨幅，则笔记不达标。达标时，作者活动赏金；不达标时，读者赏金退回，作者押金平分给读者。</view>
+        <view>4.以下情况为无效，退回双方资金：股票自起算至当日收盘一直封涨停或停牌；笔记未达标，但截止日股票处于停牌状态。</view>
+      </view>
+      <view id='m0' catch:tap='setNoteMaskFalseFun'>朕知道了</view>
+      <!-- <image id='m0' src='../images/icon_close.png' catch:tap='setNoteMaskFalseFun'></image> -->
+    </view>
+  </view>
+  <!-- 观点规则遮罩 -->
+  <view class="mask" wx:if="{{maskViewState?true:false}}">
+    <view>
+      <view>规则</view>
+      <view>
+        <view>1.遵守中华人民共和国法律，不得发布政治言论、敏感信息、色情、扰乱社会秩序以及未经证实的消息，遵守证监会相关的规章规定。</view>
+        <view>2.不得发布辱骂、诋毁他人的信息。</view>
+        <view>3.可设置付费，打赏功能。</view>
+      </view>
+      <view id='m0' catch:tap='setViewMaskFalseFun'>朕知道了</view>
+      <!-- <image id='m0' src='../images/icon_close.png' catch:tap='setViewMaskFalseFun'></image> -->
+    </view>
+  </view>
+  <!-- 阅览 -->
+  <view wx:if="{{readMaskState}}" class='readMask' catchtouchmove='true' >
+    <view class='readBox'>
+      <view class='readContent'>
+        <view class='clearfix'>
+          <view class='fl'>股票</view>
+          <view class='fl' style='width:48%'>{{shareValue}}</view>
+          <view class='fr' style='color:#fc7946' wx:if="{{xPrice!=''}}">{{xPrice}}元</view> 
+        </view>
+        <view class='clearfix'>
+          <view class='fl'>逻辑</view>
+          <view class='fl tw7'>{{logicValue}}</view>
+        </view>
+        <view class='clearfix'>
+          <view class='fl'>目标</view>
+          <view class='fl' style='color:#2772ff'>{{timeArray[timeIndex]}}日{{riseArray[riseIndex]}}%</view>
+        </view>
+        <view class='clearfix'>
+          <view class='fl'>止损</view>
+          <view class='fl' style='color:#2772ff'>-{{stopArray[stopIndex]}}%</view>
+        </view>
+        <view class='clearfix'>
+          <view class='fl'>时间</view>
+          <view class='fl'>{{time}}开始</view>
+        </view>
+        <view class='clearfix'>
+          <view class='fl'>截止</view>
+          <view class='fl'>{{timeArray[timeIndex]}}日后结束</view>
+        </view>
+        <view class='clearfix'>
+          <view class='fl'>标价</view>
+          <view class='fl' style='color:#fc7946' wx:if="{{noteChargeIndex==0}}">免费</view>
+          <view class='fl' style='color:#fc7946' wx:if="{{noteChargeIndex==1}}">{{priceArray[priceIndex]}}积分</view>
+          <view class='fl' style='color:#fc7946' wx:if="{{noteChargeIndex==2}}">{{priceArray[priceIndex]}}元</view>
+        </view>
+        <view class='clearfix'>
+          <view class='fl'>限时</view>
+          <view class='fl'>{{endDateArray[endDateIndex]}}</view>
+        </view>
+        <view class='readLable'>将显示在“最新笔记、成功率高，日均高收益”</view>   
+      </view>
+      
+      <view class='readBtn clearfix'>
+        <view class='fl' catch:tap='falseFun'>编辑修改</view>
+        <view class='fr' catch:tap='noteReleaseFun'>确认发布</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{publishSuccess}}" class='readMask'>
+    <view class='readBox'>
+      <image mode="aspectFit" src="{{publishSuccessImgSrc}}" class='publishSuccessImg'></image>
+      <view class='shareBtnBox'>
+        <button class='shareBtn' bindtap='shareToFriends' open-type="share"></button>
+      </view>
+      <view class='close' catchtap='toNotedetails'></view>
+    </view>
+  </view>
+  
+  <!-- 底部 -->
+  <view class='footer'></view>
+</view>
+

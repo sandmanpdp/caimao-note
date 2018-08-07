@@ -1,0 +1,95 @@
+.bb{border-bottom: 1rpx solid #eeeeee}
+.mb20{margin-bottom: 20rpx}
+.arrow{margin: 0!important;width: 19rpx!important;height: 34rpx!important}
+/* 头部 */
+.head{position: relative;font-size: 0}
+.head>image{width: 100%;height: 247rpx}
+.head>view{box-sizing: border-box;position: absolute;top: 0;left: 0;padding: 56rpx 30rpx;width: 100%;height: 100%}
+.head>view>view>view:nth-child(1){margin-bottom: 30rpx;padding-left: 6rpx;font-size: 26rpx;color: #ffffff;line-height: 26rpx}
+.head>view>view>view:nth-child(2){font-size: 88rpx;color: #ffffff;line-height: 88rpx}
+.head>view>image{margin-top: 54rpx;width: 204rpx;height: 82rpx}
+/* 列表 */
+.box{box-sizing: border-box;padding: 0 30rpx;width: 100%;height: 100rpx;background-color: #fff}
+.box>view{box-sizing: border-box;padding: 32rpx 0;width: 100%;height: 100%;font-size: 0}
+.box>view>view:nth-child(1){font-size: 34rpx;line-height: 37rpx;color: #2e2e2e}
+.box>view>image:nth-child(2){margin: 0 38rpx 0 20rpx;width: 37rpx;height: 37rpx}
+.box>view>view:last-child{font-size: 36rpx;line-height: 37rpx;color: #fc7946}
+.frozen{box-sizing: border-box;padding: 0 30rpx;width: 100%;min-height: 100rpx;background-color: #fff}
+.other>view{width: 50%;line-height: 100rpx}
+.other>view>text:nth-child(1){font-size: 30rpx;color: #b9b9b9;vertical-align: middle}
+.other>view>text:nth-child(2){font-size: 36rpx;color: #808080;vertical-align: middle}
+/* by pdp */
+/* 钻石收益 */
+.damond {
+  margin-bottom: 10rpx;
+}
+.damondValue {
+  font-size:36rpx;
+  line-height:37rpx;
+  color:#fc7946;
+}
+.drawCash {
+  width: 15%;
+  text-align: center;
+  color: #2772FF !important;
+  border-left: 1px solid #2772FF;
+  padding: 0 40rpx;
+}
+.question{margin: 0 38rpx 0 10rpx;width: 26rpx;height: 26rpx}
+
+.readMask{position:fixed;top:0;left:0;width:100%;height:100vh;background-color:rgba(0,0,0,.5);z-index:999999999}
+.identityAuthBox {
+  width: 500rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  background: #fff;
+  border-radius: 20rpx;
+  padding-bottom: 60rpx;
+}
+.close {
+  position: absolute;
+  top: -60rpx;
+  left: 500rpx;
+}
+.close ,.close image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.boxTitle{
+  font-size: 36rpx;
+  color: #f45121;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #dcdcdc;
+  font-weight: 600;
+}
+.boxText {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #333333;
+  text-align: center;
+  font-weight: 600;
+}
+.goToAuthPage {
+  font-size: 34rpx;
+  color: #fff;
+  background: #2772FF;
+  line-height: 90rpx;
+  margin: 40rpx auto 0;
+  border-radius: 10rpx;
+  width: 300rpx;
+  text-align: center;
+}
+.unPass {
+  color: #e32f37;
+  font-size: 30rpx;
+}
+.nextTime {
+  font-size: 24rpx;
+  color: #2772FF;
+  text-align: center;
+  margin-top: 20rpx;
+  line-height: 24rpx;
+}

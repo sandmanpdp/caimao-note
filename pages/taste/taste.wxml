@@ -1,0 +1,13 @@
+<view class='head'>
+    <image src='../images/logo.png'></image>
+    <view>黑石智投  V1.0.1</view>
+</view>
+<view class='img'>
+  <image mode="widthFix" src="../images/taste1.png"></image>
+  <image mode="widthFix" src="../images/taste2.png"></image>
+  <image mode="widthFix" src="../images/taste3.png"></image>
+  <image mode="widthFix" src="../images/taste4.png"></image>
+  <image mode="widthFix" src="../images/taste5.png"></image>
+  <view>点击退出计划</view>
+  <image mode="widthFix" src="../images/taste6.png"></image>
+</view>

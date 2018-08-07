@@ -1,0 +1,31 @@
+<!-- 头部 -->
+<view class='head clearfix'>
+  <!-- by pdp -->
+  <view class="fl {{money==1?'bkffad2b':''}} {{array[index].isSelected == true ? 'selectedBox':''}}" wx:for="{{array}}" id="{{index}}" catchtap='moneyFun' data-money='{{array[index].money}}'>
+    <view>{{array[index].top}}</view>
+    <view class="{{money==1?'cdfff':''}}">{{array[index].bottom}}</view>
+    <view wx:if='{{array[index].isSelected}}' class='selectedMark'>
+      <icon class='selectedIcon' type='success_no_circle' color='#fff' size='10'></icon>
+    </view>
+  </view>
+  <view id='otherMoney'>
+    <input value='{{price}}' placeholder='输入其他金额' type='number' bindfocus='otherMoneyFocus' bindinput='savePrice'></input>
+  </view>
+  
+</view>
+<!-- 主体 -->
+<view class='section'>
+  <view class='bb'>支付平台</view>
+  <view class='clearfix bb box' id='t0' catchtap='typeFun'>
+    <image class='fl' src='../images/icon_wx.png'></image>
+    <view class='fl'>微信支付</view>
+    <image class='fr' src='../images/recharge_{{type==0?true:false}}.png'></image>
+  </view>
+  <!-- <view class='clearfix box' id='t1' catchtap='typeFun'>
+    <image class='fl' src='../images/icon_zfb.png'></image>
+    <view class='fl'>支付宝支付</view>
+    <image class='fr' src='../images/recharge_{{type==1?true:false}}.png'></image>
+  </view> -->
+</view>
+<!-- 立即充值 -->
+<view class='btn' catchtap='getFun'>立即充值</view>

@@ -1,0 +1,24 @@
+<view class='box clearfix'>
+  <image class='fl' src='../images/task_1.png'></image>
+  <view class='fl'>
+    <view>每日签到送5积分</view>
+    <view>连续签到一周再送20积分</view>
+  </view>
+  <view class='fr' catchtap="{{state?'':'signFun'}}">{{state?'已签到':'签到'}}</view>
+</view>
+<!-- <view class='box clearfix'>
+  <image class='fl' src='../images/task_2.png'></image>
+  <view class='fl'>
+    <view>绑定手机号</view>
+    <view>绑定手机50积分</view>
+  </view>
+  <view class='fr'>绑定</view>
+</view>
+ <view class='box clearfix'>
+  <image class='fl' src='../images/task_3.png'></image>
+  <view class='fl'>
+    <view>每日分享</view>
+    <view>分享链接获得5积分</view>
+  </view>
+  <view class='fr'>分享</view>
+</view>  -->

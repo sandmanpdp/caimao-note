@@ -1,0 +1,87 @@
+<!--pages/oxnotes/oxnotes.wxml-->
+<!-- 头部 -->
+<view class='head clearfix'>
+  <!-- 选项一 -->
+  <view class='fl head_condition_noe clearfix' catch:tap='defaultOptFun' id='headOne'>
+    <!-- 默认选项 -->
+    <view class='fl head_condition_option'>{{optionOne[indexOne].text}}笔记</view>
+    <!-- 向下箭头 -->
+    <image class='fl icon_bottom_arrow' src='../images/icon_bottom_arrow.png'></image>
+  </view>
+  <!-- 选项二 -->
+  <view class='fl head_condition_two clearfix' catch:tap='defaultOptFun' id='headTwo'>
+    <!-- 默认选项 -->
+    <view class='fl head_condition_option'>{{optionTwo[indexTwo].text}}</view>
+    <!-- 向下箭头 -->
+    <image class='fl icon_bottom_arrow' src='../images/icon_bottom_arrow.png'></image>
+  </view>
+  <!-- 选项列表 -->
+  <view class='head_list' wx:if="{{mask}}">
+    <!-- 向上三角形 -->
+    <view class="head_icon_trigon {{opt ? 'head_icon_trigon_one' : 'head_icon_trigon_two'}}"></view>
+    <!-- 列表渲染 -->
+    <view wx:for="{{opt ? optionOne : optionTwo}}" class="head_list_box clearfix {{item.state ? 'bc_gray' : 'bc_none'}}" catch:tap='optionOptFun' data-index="{{index}}">
+      <view class='fl head_list_box_option'>{{item.text}}</view>
+      <icon hidden="{{item.state ? false : true}}" class='fl success_no_circle' type='success_no_circle' size='18' color='#b9b9b9'></icon>
+    </view>
+  </view>
+</view>
+<!-- 笔记列表 -->
+<view class='killer_section'>
+  <view>
+    <!-- 列表渲染 -->
+    <!-- <view class='killer_section_box' catchtap="{{item.is_look ==-1 && item.price != 0 ?'buyFun':'readFun'}}" id="{{'box_'+item.id}}" data-uid='{{item.user_id}}' wx:for="{{noteArray}}"> -->
+    <view class='killer_section_box' catchtap="{{item.readOrbuyFun}}" id="{{'box_'+item.id}}" data-uid='{{item.user_id}}' wx:for="{{noteArray}}">
+      <!-- 图标 -->
+      <view class='killer_section_icon_line'></view>
+      <!-- 购买按钮样式状态：true/false -->
+      <!-- 付费 -->
+      <view>
+        <!-- <view class="killer_section_icon_buy buy_true}}" catchtap="{{item.is_look == -1 && item.price != 0?'buyFun':'readFun'}}" id="{{'readBtn_'+item.id}}" data-uid='{{item.user_id}}'>{{item.is_look == -1 && item.price != 0?'付费阅读':'阅 读'}}</view> -->
+        <view class="killer_section_icon_buy buy_true}}" catchtap="{{item.readOrbuyFun}}" id="{{'readBtn_'+item.id}}" data-uid='{{item.user_id}}'>{{item.readOrbuyFun == 'buyFun' ?'付费阅读':'阅 读'}}</view>
+        <view class="killer_section_icon_trigon trigon_true}}"></view> 
+      </view>
+      <!-- 左侧内容 -->
+      <view class='killer_section_box_left'>
+        <image class='killer_section_box_left_userHead' src='{{item.avatar}}'></image>
+        <view class='killer_section_box_left_userName tw1'>{{item.name}}</view>
+        <view class='killer_section_box_left_depict tw1'>累计涨幅{{item.sum}}%</view>
+      </view>
+      <!-- 右侧内容 -->
+      <view class='killer_section_box_right pstRelative'>
+        <view class='seal' wx:if="{{item.is_reach==0}}">
+          <image src='../images/sealUnreach.png'></image>
+        </view>
+        <view class='seal' wx:if="{{item.is_reach==1}}">
+          <image src='../images/sealReach.png'></image>
+        </view>
+        <view class='killer_section_box_right_one'>
+          <view class='killer_sectsion_box_right_one_title tw1'>{{item.code}}</view>
+          <view class='clearfix'>
+              <view class='killer_section_box_right_one_depict'>#{{item.tag}}</view>
+          </view>
+        </view>
+        <view class='killer_section_box_right_two clearfix'>
+        <view class='killer_section_box_right_two_left'>
+            <view class='killer_section_box_right_two_left_title tw1'>{{item.day}}日{{item.rise}}%</view>
+            <view class='killer_section_box_right_two_left_depict'>目标涨幅</view>
+          </view>
+          <view class='killer_section_box_right_two_right'>
+            <view class='killer_section_box_right_two_right_title' style='position:relative;'>
+               <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if="{{item.readOrbuyFun == 'buyFun' }}"></image>
+          
+              <text class="{{item.readOrbuyFun == 'buyFun' ?'needPriceText':'freePriceText'}}">
+                {{item.readOrbuyFun == 'buyFun' ? item.price : '免费'}}
+              </text> 
+            
+            </view>
+            <view class='killer_section_box_right_two_right_depict'>笔记价格</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{notesNull}}" class='drop'>暂无更多笔记数据</view>
+</view>
+<!-- 下拉提示 -->
+<view class='drop' wx:if="{{bottomState}}">下拉刷新   加载更多内容</view>

@@ -1,0 +1,9 @@
+<!--pages/drawCashRules/drawCashRules.wxml-->
+ <view class='drawCashBox'>
+  <!-- <view class='drawCashContent'>
+    {{drawCashRules}}
+  </view> -->
+  <web-view src="{{src}}"  >
+    
+  </web-view>
+</view> 

@@ -1,0 +1,12 @@
+/* 头部 */
+.head{box-sizing: border-box;padding: 30rpx;height: 134rpx;background-color: #fff}
+.head input{box-sizing: border-box;padding: 0 0 0 94rpx;height: 74rpx;border: 1px solid #dddddd;border-radius: 37rpx;font-size: 26rpx;color: #b9b9b9}
+.head icon{position: absolute;top: 50%; left: 70rpx;transform: translateY(-50%)}
+.head .list{box-sizing: border-box;margin: 0 auto;padding: 20rpx 64rpx;width: 630rpx;font-size: 26rpx;color: #555;border: 1px solid #dddddd;border-top: 0;line-height: 50rpx}
+/* 内容 */
+.section{padding: 0 30rpx 20rpx;background-color: #fff}
+.section>view{padding: 30rpx 0;border-bottom: 1rpx solid #eeeeee}
+.section>view:last-child{border: 0}
+.section>view>image{margin-right: 31rpx;width: 82rpx;height: 82rpx;border-radius: 6rpx}
+.section>view>view>view:nth-child(1){margin: 10rpx 0 16rpx;font-size: 28rpx;color: #2e2e2e;line-height: 28rpx}
+.section>view>view>view:nth-child(2){font-size: 24rpx;color: #b9b9b9;line-height: 24rpx}

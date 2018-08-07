@@ -1,0 +1,5 @@
+.head{padding: 104rpx 0}
+.head image{display: block;margin: 0 auto 30rpx;width: 132rpx;height: 132rpx;border-radius: 20rpx}
+.head view{text-align: center;font-size: 30rpx;color: #2e2e2e}
+.img image{display: block;width: 100%;}
+.img view{margin-left: 25rpx;font-size: 30rpx;color: #2772ff;line-height: 30rpx}

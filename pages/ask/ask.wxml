@@ -1,0 +1,61 @@
+<view class="{{maskState?'ban':''}}">
+  <!-- 导航 -->
+  <view class='nav clearfix'>
+    <view id='n0' class="fl {{navIndex==0?'co3f86ff':''}}" catchtap='setNavIndexFun'>最新</view>
+    <view id='n1' class="fl {{navIndex==1?'co3f86ff':''}}" catchtap='setNavIndexFun'>已解答</view> 
+    <image class='fr' src='../images/icon_rule.png' catchtap='setMaskTrueFun'></image>
+  </view>
+  <!-- 最新 -->
+  <view wx:if="{{navIndex==0?true:false}}">
+    <view class='box' catchtap='detailsAskFun'>
+      <view class='title clearfix'>
+        <image class='fl' src='../images/ta.jpg'></image>
+        <text class='fl'>股友tony</text>
+        <text class='fr'>￥50</text>
+      </view>
+      <view class='text tw4'>我是菜鸟，想买5只左右股票长期1-2年持有等大涨，请高手大师指教。现在手里有京东方A，丰原药业，中天科技，中远海控，厦门国贸，浙商证券，(前期割了中国平安，招商银行，TCL集团，中兴通...</view>
+      <view class='fun clearfix'>
+        <view class='fl'>还剩<text class='cofc7946'>30</text>小时结束</view>
+        <view class='fr co3f86ff'>我来回答</view>
+      </view>
+    </view>
+  </view>
+  <!-- 已解答 -->
+  <view wx:if="{{navIndex==1?true:false}}">
+    <view class='box' catchtap='detailsAskFun'>
+      <view class='title clearfix'>
+        <image class='fl' src='../images/ta.jpg'></image>
+        <text class='fl'>股友tony</text>
+        <view class='fr'>已结束</view>
+      </view>
+      <view class='text tw4'>
+        <view>紫光股份 000398</view>
+        <view class='tw3'>老师您好，我今天买了两成仓位紫光股份，成本15.02，下午想加仓，大盘不好就忍住了，这只股能长期持有吗？谢谢</view>
+      </view>
+      <view class='answer'>特邀<text class='co3f86ff'>@GS阳光</text>回答</view>
+      <view class='end clearfix'>
+        <view class='fl'>已结束</view>
+        <view class='fl'><text class='cofc7946'>30</text>人已抢答</view>
+        <view class='fr co3f86ff'>1元偷看</view>
+      </view>
+    </view>
+  </view>
+  <!-- 规则 -->
+  <view class='mask' wx:if="{{maskState}}">
+    <view class='one'>
+      <view>规则</view>
+      <view>
+        <view>1.问题有效期为72天，逾期没人回答赏金全额退回账户。</view>
+        <view>2.您提交的问题可以指定给牛人回答或由平台推送给炒股达人回答。</view>
+        <view>3.您的问题以及答案，其他人查看即可获得0.5元/条。</view>
+        <view>4.把您的问题分享给更多的朋友，收获更多满意的答案，同时获得更多的打赏。</view>
+      </view>
+      <view>朕知道了</view>
+      <image id='m0' src='../images/icon_close.png' catch:tap='setMaskFalseFun'></image>
+    </view>
+  </view>
+  <!-- 下拉提示 -->
+  <view class='drop'>下拉刷新   加载更多内容</view>
+  <!-- 写问股 -->
+  <image class='write' src='../images/icon_write.png' catchtap='writeAskFun'></image>
+</view>

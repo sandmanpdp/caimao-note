@@ -1,0 +1,42 @@
+/* pages/market/market.wxss */
+.goodsContainer {
+  height: 100%;
+  padding: 10rpx;
+}
+.goodsBox {
+  box-sizing:border-box;
+  background: #fff;
+  margin: 16rpx;
+  padding-bottom: 30rpx;
+  width: 332rpx;
+  height: 380rpx;
+}
+.picBox {
+  height: 260rpx;
+}
+.picContent {
+  width: 100%;
+  height: 100%;
+}
+.goodsTitle {
+  font-size: 27rpx;
+  text-align: center;
+  margin: 30rpx 0 10rpx;
+  line-height: 27rpx;
+}
+.value {
+  color: #FC8457;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  display: inline-block;
+}
+.yuanbao {
+  width: 30rpx;
+  height: 23rpx;
+  margin: 0 6rpx;
+}
+.valueBox {
+  text-align: center;
+  line-height: 28rpx;
+}

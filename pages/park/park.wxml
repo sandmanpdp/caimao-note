@@ -1,0 +1,12 @@
+<image class='banner' mode='widthFix' src='../images/park_banner.jpg'></image>
+<view class='list'>
+  <view class='box'>
+    <view>
+      <text>大盘涨跌乐</text>
+      <text>上证指数涨跌竞猜</text>
+    </view>
+    <view>20180124期即将开始</view>
+    <view>已有1131位用户参与竞猜</view>
+    <view>马上参加</view>
+  </view>
+</view>

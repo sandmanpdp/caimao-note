@@ -1,0 +1,73 @@
+<!-- 第一部分 -->
+<view class='pr'>
+  <image mode='widthFix' src='../images/gameone_1.jpg'></image>
+  <!-- 左 -->
+  <view class='box_one'>
+    <view>01-22 13：00</view>
+    <view>开盘指数</view>
+    <view>3495.4</view>
+  </view>
+  <!-- 右 -->
+  <view class='box_one'>
+    <view>01-22 13：00</view>
+    <view>实时指数</view>
+    <view>3495.4</view>
+  </view>
+</view>
+<!-- 第二部分 -->
+<view class='pr'>
+  <image mode='widthFix' src='../images/gameone_2.jpg'></image>
+  <view class='box_two'>
+    <!-- 积分 -->
+    <view class='box_two_title'>积分:26432</view>
+    <!-- 参与人数 -->
+    <view class='clearfix box_two_number'>
+      <view class='fl'>12543人</view>
+      <view class='fr'>12543人</view>
+    </view>
+    <view class='box_two_index'>押金:10000积分</view>
+  </view>
+  <!-- 加注 -->
+  <view class='reduce'></view>
+  <!-- 减注 -->
+  <view class='plus'></view>
+</view>
+<!-- 第三部分 -->
+<view class='pr'>
+  <image mode='widthFix' src='../images/gameone_3.jpg'></image>
+  <!-- 涨 -->
+  <view class='rise'></view>
+  <!-- 跌 -->
+  <view class='fall'></view>
+</view>
+<!-- 第四部分 -->
+<view class='pr'>
+  <image mode='widthFix' src='../images/gameone_4.jpg'></image>
+  <view class='box_four'>
+    <!-- 导航 -->
+    <view class='box_for_nav clearfix'>
+      <view class='fl true'>近期结果</view>
+      <view class='fl'>我的记录</view>
+    </view>
+    <!-- 列表 -->
+    <view class='box_for_list'>
+      <!-- 历史结果 -->
+      <view class='pr'>
+        <!-- 标题 -->
+        <view class='clearfix list_box list_box_one'>
+          <view class='fl'>期  数</view>
+          <view class='fl'>奖池积分</view>
+          <view class='fl'>结  果</view>
+        </view>
+        <!-- 循环 -->
+        <view>
+          <view class='clearfix list_box'>
+            <view class='fl'>08 期</view>
+            <view class='fl'>12542147</view>
+            <view class='fl red'>涨</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

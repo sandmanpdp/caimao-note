@@ -1,0 +1,6 @@
+.box{padding: 36rpx 30rpx;background-color: #fff;border-bottom: 1rpx solid #eeeeee}
+.box:last-child{border-bottom: 0}
+.box>image{margin-right: 20rpx;width: 88rpx;height: 88rpx}
+.box>view:nth-child(2)>view:nth-child(1){margin: 6rpx 0 18rpx;font-size: 32rpx;color: #333333;line-height: 32rpx}
+.box>view:nth-child(2)>view:nth-child(2){font-size: 26rpx;color: #939393;line-height: 26rpx}
+.box>view:nth-child(3){margin-top: 17rpx;width: 120rpx;height: 54rpx;background-color: #5491ff;border-radius: 27rpx;text-align: center;line-height: 54rpx;font-size: 26rpx;color: #fff}

@@ -1,0 +1,22 @@
+<!-- 头部 -->
+<view class='pr head'>
+  <input disabled="{{nullState}}" placeholder='搜索' bindinput="bindKeyInput"></input>
+  <icon type='search' size='16'></icon>
+  <!-- <view class='list' wx:if="{{similarState}}">
+    <view wx:for="{{similarValue}}" catchtap='set'>{{item}}</view>
+  </view> -->
+</view>
+<!-- 内容 -->
+<view class='section'>
+  <view class='clearfix' wx:for="{{similarValue}}" id='{{item.id}}' catchtap='recommendJumpFun'>
+    <image class='fl' src='{{item.avatar}}'></image>
+    <view class='fl'>
+      <view>{{item.nickname}}</view>
+      <view>累计收益{{item.sum_increase}}%</view>
+    </view>
+  </view>
+</view>
+<!-- 未找到 -->
+<view class='null' wx:if="{{!similarState}}">未找到关注信息</view>
+<!-- 暂无提示 -->
+<view wx:if="{{nullState}}" class='drop'>暂无更多关注信息</view>

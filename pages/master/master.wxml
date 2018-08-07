@@ -1,0 +1,162 @@
+<!--pages/master/master.wxml-->
+<!-- 头部 -->
+<view class='head'>
+  <!-- 上半部分 -->
+  <view class='head_top clearfix'>
+    <!-- 用户头像 -->
+    <view class='fl head_top_userHead'>
+      <image class='head_top_userHead_img' src='{{master.avatar}}'></image>
+      <image class='head_top_userHead_vip' src='../images/icon_userHead_vip.png'></image>
+    </view>
+    <!-- 用户姓名 -->
+    <view class='fl head_top_userName'>
+      <view class='head_top_userName_name tw1'>{{master.nickname}}</view>
+       <view class='head_top_userName_depict tw1'>{{sign}}</view> 
+    </view>
+    <!-- 关注  -->
+    <view wx:if="{{!own}}">
+     <view class='fr head_top_follow tc' wx:if="{{master.is_concern == 0}}" catch:tap="masterFollowFun" id='{{master.user_id}}'>关注</view> 
+     <view class='fr head_top_follow tc' wx:if="{{master.is_concern == 1}}" catch:tap="followClearFun" id='{{master.user_id}}'>取关</view> 
+    </view>
+  </view>
+  <!-- 下半部分 -->
+  <view class='head_bottom clearfix'>
+    <view class='fl head_bottom_box tc'>
+      <view class='head_bottom_box_number'>{{master.sum_reach*10}}%</view>
+      <view class='head_bottom_box_depict'>近10篇达标</view>
+    </view>
+    <view class='fl head_bottom_box tc'>
+      <view class='head_bottom_box_number'>{{master.sum_increase}}%</view>
+      <view class='head_bottom_box_depict'>
+        累计收益
+        <view class='head_bottom_box_depict_icon'>?</view>
+      </view>
+    </view>
+    <view class='fl head_bottom_box tc'>
+      <view class='head_bottom_box_number' id='{{master.user_id}}' catchtap='fansLinkFun'>{{master.fans}}</view>
+      <view class='head_bottom_box_depict'>粉丝</view>
+    </view>
+  </view>
+  <!-- 向他/她提问 -->
+  <!-- <view class='head_quiz'>
+    <view class='head_quiz_box clearfix' catch:tap='masterQuizFun'>
+      <image class='fl head_quiz_box_icon' src='../images/icon_quiz.png'></image>
+      <view class='fl head_quiz_box_title'>向{{master.sex == 1 ? '她' : '他'}}提问</view>
+    </view>
+  </view> -->
+</view>
+<!-- 内容 -->
+<view class='section'>
+  <!-- 导航 -->
+  <view class='section_nav clearfix'>
+    <view class="fl section_nav_box {{order == 0 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="0">笔记( {{master.note_num}} )</view>
+    <view class="fl section_nav_box {{order == 1 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="1">观点( {{master.view_num}} )</view>
+    <!-- <view class="fl section_nav_box {{order == 2 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="2">问股( {{askTheStockNav}} )</view> -->
+  </view>
+  <!-- 显示区 -->
+  <view class='section_show'>
+    <!-- 笔记 -->
+    <view wx:if="{{order ==0 ? true :false}}">
+      <view>
+        <view class='section_show_box'  wx:for="{{masterNote}}" id='{{item.id}}' data-uid='{{item.user_id}}' catchtap='{{item.readOrbuyFun}}'>
+          <view class='section_show_notes_title clearfix'>
+            <view class='fl section_show_notes_title_text'>{{item.share}}</view>
+            <view class='fl section_show_notes_title_text'>{{item.code}}</view>
+            <view class='fl section_show_notes_title_price'>
+              <image src='../images/yuanbaoN.png' class='yuanbao'></image>
+              {{item.price == 0 ? '免费':item.price}}
+            </view>
+            <!-- <view class='fr section_show_notes_title_state' catch:tap="{{item.state?'masterNotesFun':''}}" id='{{item.id}}'>{{item.is_reach ==-1?'去看看':'未开始'}}</view> -->
+          </view>
+          <view class='section_show_bottom'>
+            <view class='clearfix'>
+              <view class='fl section_show_bottom_top'>
+              
+                <view class='section_show_bottom_top_title'>{{item.rise}}%</view>
+                <view class='section_show_bottom_top_depict'>目标涨幅({{item.targetDay}}日)</view>
+              </view>
+              <view class='fl section_show_bottom_top'>
+                <view class="section_show_bottom_top_title {{ item.actualTop < 0 ? 'rateIsMinus' : 'rateIsPositive' }}">{{item.actualTop}}%</view>
+                <view class="section_show_bottom_top_depict">实际涨幅({{item.actualDay}}日)</view>
+              </view>
+            </view>
+            <view class='section_show_bottom_bottom clearfix'>
+              <view class='fl section_show_bottom_bottom_left' wx:if="{{item.is_reach==-1}}">到 {{item.work_date}} 结束</view>
+              <view class='fl section_show_bottom_bottom_left' wx:if="{{item.is_reach!=-1}}">已结束</view>
+              <view class='fr clearfix'>
+                <image class='fl section_show_bottom_bottom_right_icon' src='../images/icon_read.png'></image>
+                <view class='fr section_show_bottom_bottom_right_number'>{{item.look}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{noteNull}}" class='drop'>暂无更多笔记信息</view>
+    </view>
+    <!-- 观点 -->
+    <!-- <view class='section_show_box' wx:if="{{order ==1 ? true :false}}" wx:for="{{masterView}}">
+      <view class='section_show_view_title bc_yellow clearfix'>
+        <view class="fl section_show_view_title_icon {{item.state ? '' : 'fc_gray'}}">{{item.state ? '进行' : '过期'}}</view>
+        <view class='fl section_show_view_title_text'>{{item.title}}</view>
+        <view class='fl section_show_view_title_number'>({{item.stockCode}})</view>
+        <view class="'fr section_show_view_title_price {{item.state?'':'fc_gray'}}" wx:if="{{item.adopt?false:true}}">￥{{item.price}}</view>
+        <view class="section_show_view_title_state {{item.state ?'':'bc_gray'}}" wx:if="{{item.adopt?true:false}}">答案被采纳</view> 
+      </view>
+      <view>
+        <view class='section_show_view_bottom_depict tw2'>{{item.depict}}</view>
+        <view class='clearfix'>
+          <view class='fr section_show_view_bottom_jump' catch:tap='viewJumpFun' id='{{item.id}}'>详情 〉</view>
+          <view class='fr section_show_view_bottom_time'>{{item.time}}</view>
+          <view class='fr section_show_view_bottom_time'>{{item.day}}</view>
+        </view>
+      </view>
+    </view> -->
+    <view wx:if="{{order ==1 ? true :false}}">
+      <view class='box_box'>
+        <view class='box' wx:for="{{masterView}}" id='{{item.id}}' catchtap='viewJumpFun'>
+          <view class='title'>{{item.title}}</view>
+          <view class='text tw3'>{{item.intro}}</view>
+          <view class='info clearfix'>
+            <view class='author fl'>
+              <text>{{item.created_at}}</text>
+            </view>
+            <view class='data fr'>
+                <image src='../images/icon_look.png' class='icon'></image>
+                <text class='number'>{{item.look}}</text>
+                <image src='../images/icon_view.png' class='icon'></image>
+                <text class='number'>{{item.comment}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{viewNull}}" class='drop'>暂无更多观点信息</view>
+    </view>
+    <!-- 问股 -->
+    <view class='section_show_box' wx:if="{{order ==2 ? true :false}}" wx:for="{{askTheStock}}">
+      <view class='section_show_view_title bc_yellow clearfix'>
+        <view class="fl section_show_askTheStock_title_icon {{item.state ? '' : 'fc_gray'}}">问</view>
+        <view class='fl section_show_view_title_text'>{{item.title}}</view>
+        <view class='fl section_show_view_title_number'>({{item.stockCode}})</view>
+        <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}">{{item.state ? '￥'+item.price : '已过期'}}</view>
+      </view>
+      <view>
+        <view class='section_show_view_bottom_depict tw2'>{{item.depict}}</view>
+        <view class='clearfix'>
+          <view class='fl section_show_view_bottom_time'>{{item.day}}</view>
+          <view class='fl section_show_view_bottom_time'>{{item.time}}</view>
+          <view class='data fr'>
+              <image src='../images/icon_look.png' class='icon'></image>
+              <text class='number'>201</text>
+              <image src='../images/icon_view.png' class='icon'></image>
+              <text class='number'>20</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='issue' wx:if="{{false}}">
+      <image src='../images/icon_issue.png'></image>
+    </view>
+    <!-- 下拉提示 -->
+    <!-- <view class='drop' wx:if="{{bottomState}}">下拉刷新   加载更多内容</view> -->
+  </view>
+</view>

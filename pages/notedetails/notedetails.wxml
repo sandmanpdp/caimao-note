@@ -1,0 +1,264 @@
+<view class="{{maskRewardState?'ban':''}}">
+  <!-- 头部 -->
+  <view class='head' wx:if="{{uid==myid?false:true}}">
+    <!-- 上半部分 -->
+    <view class='head_top clearfix'>
+      <!-- 用户头像 -->
+      <view class='fl head_top_userHead' catchtap='toMasterPage'>
+        <image class='head_top_userHead_img' src='{{userInfo.avatar}}'></image>
+        <image wx:if="{{userInfo.rids==5?true:false}}" class='head_top_userHead_vip' src='../images/icon_userHead_vip.png'></image>
+      </view>
+      <!-- 用户姓名 -->
+      <view class='fl head_top_userName' catchtap='toMasterPage'>
+        <view class='head_top_userName_name tw1'>{{userInfo.nickname}}</view>
+        <view class='head_top_userName_depict tw1'>{{sign}}</view> 
+      </view>
+      <!-- 用户关注 -->
+      <view wx:if="{{uid==myid?false:true}}" id='{{uid}}' class='fr head_top_userFollow tc' catchtap="{{!followState?'masterFollowFun':''}}">{{followState?'已关注':'关注'}}</view>
+    </view>
+    <!-- 下半部分 -->
+    <view class='head_bottom clearfix'>
+      <view class='fl head_bottom_box tc clearfix'>
+        <view class='head_bottom_box_number'>{{userInfo.sum_reach*10}}%</view>
+        <view class='head_bottom_box_depict'>近10篇达标</view>
+      </view>
+      <view class='fl head_bottom_box tc clearfix '>
+        <view class='head_bottom_box_number'>{{userInfo.sum_increase}}%</view>
+        <view class='head_bottom_box_depict'>累计收益</view>
+      </view>
+      <view id='{{uid}}' class='fl head_bottom_box tc clearfix' catchtap='fansLinkFun'>
+        <view class='head_bottom_box_number'>{{userInfo.fans}}</view>
+        <view class='head_bottom_box_depict'>粉丝</view>
+      </view>
+    </view>
+  </view>
+  <!-- 标题 -->
+  <view class='title clearfix'>
+    <view class='fl'>
+      <view>{{noteInfo.share}}</view>
+      <view class='coe32f37'>{{noteInfo.code}}</view>
+    </view>
+    <view class='fl'>
+      <view class='coe32f37'>{{noteInfo.rise}}%</view>
+      <view>目标涨幅({{targetDay}}日)</view>
+    </view>
+    <view class='fl'>
+      <view class='coe32f37' wx:if="{{actualTop==0}}">--</view>
+      <view class="coe32f37 {{ actualTop < 0 ? 'rateIsMinus' : 'rateIsPositive' }}" wx:if="{{actualTop!=0}}">{{actualTop}}%</view>
+      <view>实际涨幅({{actualDay}}日)</view>
+    </view>
+  </view>
+  <!-- 价格数据 -->
+
+  <view wx:if="{{buyState}}" class='clearfix data'>
+    <view class='fl'>
+      <view>{{newPrice}}</view>
+      <view>最新价</view>
+    </view>
+    <view class='fl'>
+      <view>{{startPrice}}</view>
+      <view>起算价</view>
+    </view>
+    <view class='fl'>
+      <view>{{targetPrice}}</view>
+      <view>目标价</view>
+    </view>
+    <view class='fl'>
+      <view>{{stopPrice}}</view>
+      <view>止损价</view>
+    </view>
+  </view>
+  <!-- 距离结束 笔记收益 押金 by pdp -->
+  <view class='deadline_box clearfix' wx:if="{{uid==myid?true:false}}">
+    <view class='fl deadline_box_left tc'>
+      <view class='deadline_box_depict'>距离结束</view>
+      <view class='deadline_box_number coe32f37'>{{endDay}}</view>
+    </view>
+    <view class='fl deadline_box_middle tc'>
+      <view class='deadline_box_depict'>笔记收益</view>
+      <view class='deadline_box_number coe32f37 parentPst'>
+        <image class='yuanbao' src='../images/yuanbaoN.png'></image>
+        <text class='coe32f37'>{{income}}</text>
+      </view>
+      <image wx:if="{{isReach == '0'}}" class='seal' src='../images/sealUnreach.png'></image>
+      <image wx:if="{{isReach == '1'}}" class='seal' src='../images/sealReach.png'></image>
+    </view>
+    <view id='{{uid}}' class='fl deadline_box_right tc'>
+      <view class='deadline_box_depict'>打赏收益</view>
+      <view class='deadline_box_number coe32f37 parentPst'>
+        <image class='yuanbao' src='../images/yuanbaoN.png'></image>
+        <text class='coe32f37'>{{total_reward}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 内容 -->
+  <view class='section'>
+    <view class='clearfix'>
+      <view class='fl'>标题</view>
+      <view class='fl'>{{noteInfo.title}}</view>
+    </view>
+    <view class='clearfix'>
+      <view class='fl'>限时</view>
+      <view class='fl'>{{limit_day}}</view>
+    </view>
+    <view class='clearfix'>
+      <view class='fl'>周期</view>
+      <view class='fl'>{{created_at}} 至 {{work_date}}</view>
+    </view>
+    <view class='clearfix'>
+      <view class='fl'>止损</view>
+      <view class='fl cofc7946'>{{noteInfo.fall}}%</view>
+    </view>
+    <view class='clearfix'>
+      <view class='fl lht45'>逻辑</view>
+      <view class='fl lht45'>
+        <view>
+          <!-- {{logic}} -->
+          <view wx:if='{{isSub}}' wx:for='{{logic}}' class='soloLogic'>
+            {{item.content}}
+          </view>
+          <view>{{item.created_at}}</view>
+          <view wx:if='{{!isSub}}'>
+            {{noSubNote}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 数据 -->
+  <!-- <view wx:if="{{buyState}}" class='clearfix data'>
+    <view class='fl'>
+      <view>{{newPrice}}</view>
+      <view>最新价</view>
+    </view>
+    <view class='fl'>
+      <view>{{startPrice}}</view>
+      <view>起算价</view>
+    </view>
+    <view class='fl'>
+      <view>{{targetPrice}}</view>
+      <view>目标价</view>
+    </view>
+    <view class='fl'>
+      <view>{{stopPrice}}</view>
+      <view>止损价</view>
+    </view>
+  </view> -->
+
+  <!-- 关联观点 by pdp -->
+  <view class='replenishViews' wx:if='{{isRelatedView}}'>
+    <view class='replenishViews_title'>
+      关联观点
+    </view>
+    <!-- 关联观点内容 -->
+    <view class='viewsBox'>
+      <view class='viewsContent' wx:for='{{relatedView}}' catchtap='relatedViewDetail' data-id='{{relatedView[index].id}}'>
+        <view class='viewTitle'>{{relatedView[index].title}}</view>
+        <view class='viewDetails'>{{relatedView[index].intro}}</view>
+        <view class='viewTime clearfix'>
+          <view class='fl'>{{relatedView[index].created_at}}</view>
+          <view class='fr'>查看观点详情</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 阅读 -->
+  <view class='read' wx:if="{{noteInfo.look == 0 ? false : true }}">
+    <view>阅读
+      <text>（{{noteInfo.look}}）</text>
+      <text class='allData fr clearfix' catchtap='linkReadUserPage'>全部></text>
+    </view>
+    <view class='clearfix'>
+      <image class='fl' id='{{item.user_id}}' src='{{item.avatar}}' wx:for="{{readInfo}}" catchtap='linkUserFun'></image>
+      <!-- <view class='fl' wx:if="{{readState}}" catchtap='linkReadUserPage'>
+        <text></text>
+        <text></text>
+        <text></text>
+        <text></text>
+      </view> -->
+    </view>
+  </view>
+
+  <!-- 打赏 -->
+  <view class='read' style='margin-top:20rpx;' wx:if="{{profitNum == 0 ? false : true}}">
+    <view>打赏
+      <text>（{{profitNum}}）</text>
+      <text class='allData fr clearfix' catchtap='linkRewardUserPage'>详情></text>
+    </view>
+    <view class='clearfix'>
+      <image class='fl' id='{{item.user_id}}' src='{{item.avatar}}' wx:for="{{profitInfo}}" catchtap='linkUserFun'></image>
+      <!-- <view class='fl' wx:if="{{!moreProfitInfo && profitNum!=0}}" catchtap='linkRewardUserPage'>
+        <text></text>
+        <text></text>
+        <text></text>
+        <text></text>
+      </view> -->
+    </view>
+  </view>
+  
+
+  <!-- 补充观点按钮 by pdp -->
+  <view wx:if="{{uid==myid && is_reach ?true:false}}" class='replenishViewsBtnBox'>
+    <view class='replenishViewsBtn fl' catchtap='addViewFun'>
+      补充观点
+    </view>
+    <view catchtap='toNoteList' class='toNoteListBtn fr'>
+      笔记广场
+    </view>
+  </view>
+
+  <!-- 笔记过期只显示笔记广场 -->
+
+  <view wx:if='{{uid==myid && !is_reach ?true:false}}' class='replenishViewsBtnBox'>
+    <view catchtap='toNoteList' style='margin : 0 auto' class='toNoteListBtn'>
+      笔记广场
+    </view>
+  </view>
+
+  <!-- 打赏 -->
+  <view class='marTop20 bgwhite h80 pad20' wx:if="{{buyState&&!rewardEndState}}">
+    <view wx:if="{{buyState&&!rewardEndState}}" class='btn_dashang' catchtap='openRewardMaskFun'>打赏</view>
+  </view>
+
+  <!-- 打赏遮罩 -->
+  <view class='mask rewardmask' wx:if="{{maskRewardState}}">
+    <view>
+      <image src='../images/icon_reward_mask.png'></image>
+      <view class='clearfix'>
+        <view data-index="{{index}}" class="fl {{item.state?'cof4ebd4':''}}" wx:for="{{maskRewardArray}}" catchtap='choiceRawardSumFun'>{{item.price}}积分</view>
+      </view>
+      <view>
+        优先使用余额支付
+        <!-- <text class='co2772ff'>更换</text> -->
+      </view>
+      <view catchtap='sendRawardSumFun'>打赏</view>
+      <image src='../images/icon_close.png' catchtap='closeRewardMaskFun'></image>
+    </view>
+  </view>
+  <!-- 提示 -->
+  <view wx:if="{{!buyState&&!buyEndState}}" class='cue'>
+    <image src='../images/icon_rule2.png'></image>
+    <text>若未能达到目标，全款退还并平分作者保证金</text>
+  </view>
+  <!-- 支付 -->
+  <!-- <view wx:if="{{!buyState&&!buyEndState}}" class='pay' catchtap='openCueMaskFun'>支付 {{noteInfo.need_price}}{{noteInfo.type==1?'积分':'积分'}} 查看</view> -->
+  <view wx:if="{{!buyState&&!buyEndState}}" class='pay' catchtap='openCueMaskFun'>
+    订阅查看
+  </view>
+  <!-- 支付遮罩 -->
+  <view class='mask paymask' wx:if="{{maskCueState}}">
+    <view>
+      <image src='../images/price_bk.png'></image>
+      <view class='clearfix'>
+        <image src='../images/price_left.png'></image>
+        <image class="{{item==1?'one':''}}" src='../images/price_{{item}}.png' wx:for="{{priceArray}}"></image>
+        <image src="../images/price_right{{noteInfo.type==1?'2':'1'}}.png"></image>
+      </view>
+      <view class='clearfix'>
+        <view class='fl' catchtap='closeCueMaskFun'>取消</view>
+        <view class='fl' id="{{noteInfo.id}}" catchtap='buyFun'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>

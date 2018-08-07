@@ -1,0 +1,6 @@
+<!--pages/readUserPage/readUserPage.wxml-->
+<view class='portraitBox'>
+  <image wx:for='{{readUsers}}' class='portrait' id='{{item.user_id}}' src='{{item.avatar}}' catchtap='linkUserFun'></image>
+</view>
+<view wx:if="{{!hasMoreUsers}}" class='drop'>暂无更多阅读数据</view>
+<view wx:if="{{hasMoreUsers}}" class='drop'>下拉刷新   加载更多内容</view>

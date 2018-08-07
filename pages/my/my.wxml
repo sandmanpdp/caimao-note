@@ -1,0 +1,129 @@
+<!--pages/my/my.wxml-->
+<!-- 头部 -->
+<view class='head'>
+  <!-- 上半部分 -->
+  <view class='head_top clearfix'>
+    <!-- 用户头像 -->
+    <view class='fl head_top_userHead'>
+      <image class='head_top_userHead_img' src='{{userInfo.avatar}}'></image>
+      <image wx:if="{{userInfo.rids==5?true:false}}" class='head_top_userHead_vip' src='../images/icon_userHead_vip.png'></image>
+    </view>
+    <!-- 用户姓名 -->
+    <view class='fl head_top_userName'>
+      <view class='head_top_userName_name tw1'>{{userInfo.nickname}}</view>
+       <view class='head_top_userName_depict' catchtap='changeSign'> 
+        <view class='tw1 signTextBox'>
+          {{sign}}
+        </view>
+        <!-- <image src='../images/modifyPen.png' class='modifyPen'></image> -->
+       </view> 
+    </view>
+    <!-- 用户关注 -->
+    <view class='fr head_top_userFollow tc' id='{{userInfo.id}}' data-num='{{userInfo.concern}}' catchtap='followsLinkFun'>
+      <view class='head_top_userFollow_number'>{{userInfo.concern}}</view>
+      <view class='head_top_userFollow_depict'>关注</view>
+    </view>
+    <!-- 图标：竖线 -->
+    <view class='fr head_top_iconLine'></view>
+    <!-- 用户粉丝 -->
+    <view class='fr head_top_userFans tc' id='{{userInfo.id}}' data-num='{{userInfo.fans}}' catchtap='fansLinkFun'>
+      <view class='head_top_userFans_number'>{{userInfo.fans}}</view>
+      <view class='head_top_userFans_depict'>粉丝</view>
+    </view>
+  </view>
+  <!-- 下半部分 -->
+  <view class='head_bottom clearfix'>
+    <view class='fl head_bottom_box tc clearfix' catchtap='linkHistoryFun'>
+      <view class='head_bottom_box_number'>{{userInfo.note_num}}</view>
+      <view class='head_bottom_box_depict'>历史笔记</view>
+    </view>
+    <view class='fl head_bottom_box tc clearfix' catchtap='linkReachFun'>
+      <view class='head_bottom_box_number'>{{userInfo.sum_reach*10}}%</view>
+      <view class='head_bottom_box_depict'>近10篇达标</view>
+    </view>
+    <view class='fl head_bottom_box tc clearfix' catchtap='linkHistoryFun'>
+      <view class='head_bottom_box_number'>{{userInfo.sum_increase}}%</view>
+      <view class='head_bottom_box_depict'>历史收益</view>
+    </view>
+  </view>
+</view>
+<!-- 个人账户 -->
+<navigator class='clearfix' url="/pages/wallet/wallet" open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box account clearfix'>
+    <image class='list_box_icon' src='../images/icon_account.png'></image>
+    <view class='list_box_title'>个人账户</view>
+    <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</navigator>
+<!-- 我的问股 -->
+<!-- <view class='list_box' catchtap='unopenedFun'>
+  <view class='list_box_border clearfix'>
+    <image class='list_box_icon' src='../images/icon_myStock.png'></image>
+    <view class='list_box_title'>我的问股</view>
+    <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+     <view class='list_box_number'>999</view> 
+  </view>
+</view> -->
+<!-- 我的观点 -->
+<navigator url="/pages/view/view?id={{userInfo.id}}" open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box'>
+    <view class='list_box_border clearfix'>
+      <image class='list_box_icon' src='../images/icon_myViewpoint.png'></image>
+      <view class='list_box_title'>我的观点{{userInfo.view_num == "0" ? "" : "(" + userInfo.view_num + ")" }}</view>
+       <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+      <!--<view wx:if="{{userInfo.view_num!='0'}}" class='list_box_number'>{{userInfo.view_num}}  </view> -->
+    </view>
+  </view>
+</navigator>
+<!-- 积分任务 -->
+<navigator url="/pages/task/task" open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box help clearfix'>
+    <image class='list_box_icon' src='../images/icon_integral.png'></image>
+    <view class='list_box_title'>积分任务</view>
+    <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+    <text class='list_box_depict'>做任务,免费看笔记</text>
+  </view>
+</navigator>
+<!-- 帮助与反馈 -->
+<navigator url="/pages/help/help" open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box'>
+    <view class='list_box_border clearfix'>
+      <image class='list_box_icon' src='../images/icon_help.png'></image>
+      <view class='list_box_title'>帮助与反馈</view>
+      <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+    </view>
+  </view>
+</navigator>
+<!-- 设置 -->
+<navigator url="/pages/set/set" open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box'>
+    <view class='list_box_border clearfix'>
+      <image class='list_box_icon' src='../images/icon_setup.png'></image>
+      <view class='list_box_title'>设置</view>
+      <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+    </view>
+  </view>
+</navigator>
+<!-- 关于我们 -->
+<navigator url="/pages/about/about" open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box help clearfix'>
+    <image class='list_box_icon' src='../images/icon_about.png'></image>
+    <view class='list_box_title'>关于我们</view>
+    <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+  </view>
+</navigator>
+
+<view wx:if='{{changeSign}}' class='readMask'>
+  <view class='signBox'>
+    <view>
+      <input value="{{sign}}" class='signText' placeholder='请输入15个字符以内的个性签名' maxlength='15' bindinput='mySign'></input>
+    </view>
+    <view class='clearfix btnBox'>
+      <view class='fl cancelBtn' catchtap='cancelSign'>取消</view>
+      <view class='fr confirmBtn' catchtap='submitSign'>保存</view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class='footer'></view>

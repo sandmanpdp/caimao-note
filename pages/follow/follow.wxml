@@ -1,0 +1,39 @@
+<!-- 关注列表 -->
+  <view wx:if="{{hasIt}}">  
+  <view wx:for="{{author}}" class='list_box'>
+    <!-- 上半部分 -->
+    <view class='list_box_top clearfix'>
+      <!-- 作者头像 -->
+      <view class='fl list_box_top_authorHead'>
+        <image class='list_box_top_authorHead_img' src='{{item.avatar}}'></image>
+        <image hidden="{{item.vip ? false : true}}" class='list_box_top_authorHead_vip' src='../images/icon_userHead_vip.png'></image>
+      </view>
+      <!-- 作者姓名 -->
+      <view class='fl list_box_top_authorInfo'>
+        <view class='list_box_top_authorInfo_name'>{{item.nickname}}</view>
+        <view class='list_box_top_authorInfo_depict'>{{item.depict}}</view>
+      </view>
+      <!-- 取消 -->
+      <icon type='clear' size='24' color='#ccc' class='fr list_box_top_authorInfo_icon' id='{{item.id}}' data-index='{{index}}' catch:tap='followClearFun'></icon>
+    </view>
+    <!-- 下半部分 -->
+    <view class='list_box_bottom clearfix'>
+      <view class='fl list_box_bottom_box tc'>
+        <view class='list_box_bottom_box_title'>{{item.note_num}}</view>
+        <view class='list_box_bottom_box_depict'>笔记数量</view>
+      </view>
+      <view class='fl list_box_bottom_box tc'>
+        <view class='list_box_bottom_box_title'>{{item.sum_reach}}</view>
+        <view class='list_box_bottom_box_depict'>近10篇达标</view>
+      </view>
+      <view class='fl list_box_bottom_box tc'>
+        <view class='list_box_bottom_box_title'>{{item.sum_increase}}</view>
+        <view class='list_box_bottom_box_depict'>累计收益</view>
+      </view>
+    </view>
+  </view>
+ </view>
+<view wx:else class='null'>暂无关注信息</view> 
+
+<!-- 底部 -->
+<view class='footer'></view>
