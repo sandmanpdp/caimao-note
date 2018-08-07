@@ -1,0 +1,116 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/note/note",
+    "pages/write/write",
+    "pages/news/news",
+    "pages/my/my",
+    "pages/notelist/notelist",
+    "pages/notebuy/notebuy",
+    "pages/notedetails/notedetails",
+    "pages/follow/follow",
+    "pages/follows/follows",
+    "pages/fans/fans",
+    "pages/master/master",
+    "pages/masterlist/masterlist",
+    "pages/ask/ask",
+    "pages/askdetails/askdetails",
+    "pages/askreward/askreward",
+    "pages/view/view",
+    "pages/viewdetails/viewdetails",
+    "pages/about/about",
+    "pages/aboutmy/aboutmy",
+    "pages/relief/relief",
+    "pages/taste/taste",
+    "pages/help/help",
+    "pages/opinion/opinion",
+    "pages/helplist/helplist",
+    "pages/helpdetails/helpdetails",
+    "pages/contact/contact",
+    "pages/set/set",
+    "pages/push/push",
+    "pages/phone/phone",
+    "pages/wallet/wallet",
+    "pages/flowingwater/flowingwater",
+    "pages/recharge/recharge",
+    "pages/integralrule/integralrule",
+    "pages/integral/integral",
+    "pages/distribution/distribution",
+    "pages/integralrecharge/integralrecharge",
+    "pages/gameone/gameone",
+    "pages/park/park",
+    "pages/address/address",
+    "pages/shopping/shopping",
+    "pages/task/task",
+    "pages/historynote/historynote",
+    "pages/logs/logs",
+    "pages/mainnav/mainnav",
+    "pages/drawcash/drawcash",
+    "pages/myAddress/myAddress",
+    "pages/market/market",
+    "pages/addViewPage/addViewPage",
+    "pages/drawCashRules/drawCashRules",
+    "pages/drawCashRecord/drawCashRecord",
+    "pages/scoreProblem/scoreProblem",
+    "pages/askStock/askStock",
+    "pages/readUserPage/readUserPage",
+    "pages/profitPage/profitPage",
+    "pages/identityAuth/identityAuth",
+    "pages/authSuccess/authSuccess",
+    "pages/authPage/authPage"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#2772ff",
+    "navigationBarTextStyle": "write",
+    "navigationBarTitleText": "黑石笔记",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#2772ff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#b9b9b9",
+    "selectedColor": "#2772ff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/icon_new_home_false.png",
+        "selectedIconPath": "pages/images/icon_new_home_true.png"
+      },
+      {
+        "pagePath": "pages/note/note",
+        "text": "笔记",
+        "iconPath": "pages/images/icon_new_note_false.png",
+        "selectedIconPath": "pages/images/icon_new_note_true.png"
+      },
+      {
+        "pagePath": "pages/write/write",
+        "text": "撰写",
+        "iconPath": "pages/images/icon_new_write_false.png",
+        "selectedIconPath": "pages/images/icon_new_write_true.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "消息",
+        "iconPath": "pages/images/icon_new_follow_false.png",
+        "selectedIconPath": "pages/images/icon_new_follow_true.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "pages/images/icon_new_my_false.png",
+        "selectedIconPath": "pages/images/icon_new_my_true.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 20000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

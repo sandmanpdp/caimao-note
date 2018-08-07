@@ -1,0 +1,274 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+.content {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+.authBox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 100%;
+  z-index: 999;
+}
+
+/* 背景颜色 */
+
+page {
+  background-color: #f5f5f9;
+}
+
+/* 底部 */
+
+.footer {
+  height: 50rpx;
+}
+
+/* 图标：右箭头 */
+
+.icon_right_arrow {
+  position: relative;
+  top: 6rpx;
+  margin: 0 30rpx 0 17rpx;
+  width: 19rpx;
+  height: 34rpx;
+}
+
+/* 清除浮动 */
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* 定位 */
+
+.pr {
+  position: relative;
+}
+
+/* 浮动 */
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 字符截断 */
+
+.tw1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tw2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tw3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.tw4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.tw7 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+}
+
+/* 字符对齐方式 */
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+/* 字体大小 */
+
+.fs30 {
+  font-size: 30rpx !important;
+}
+
+/* 修改默认的navigator点击态 */
+
+.navigator-hover {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0.5;
+}
+
+/* 下拉提示 */
+
+.drop {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  color: #b9b9b9;
+  text-align: center;
+}
+
+/* 禁止滚动 */
+
+.ban {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 遮罩层 */
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999999999;
+}
+
+.null {
+  line-height: 200rpx;
+  font-size: 28rpx;
+  color: #808080;
+  text-align: center;
+}
+
+
+/* pages/component/auth/auth.wxss */
+
+.alertBox {
+  width: 75%;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+.alertTitle {
+  font-weight: 600;
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #F7F5F8;
+  box-sizing: border-box;
+}
+
+.btnBox {
+  border-top: 1rpx solid #F7F5F8;
+  box-sizing: border-box;
+}
+
+.denyBtn {
+  width: 50%;
+  border-right: 1rpx solid #F7F5F8;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.commitBtn1 {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  padding: 20rpx 0;
+  position: relative;
+  color: #339C3E;
+  box-sizing: border-box;
+}
+
+.btn1 {
+  background: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+  padding: 0 0;
+  margin: 0 0;
+  height: 100%;
+  opacity:0;
+  position: absolute;
+  top: 10rpx;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+
+.logo {
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.contentTitle {
+  font-size: 30rpx;
+  font-weight: 600;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #F7F5F8;
+  box-sizing: border-box;
+}
+
+.contentDetail {
+  color: #666;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+  padding-bottom: 60rpx;
+  box-sizing: border-box;
+}
+
+.logoImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
